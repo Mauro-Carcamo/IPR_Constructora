@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IPR — Animación Logo (ensamble)</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <header class="top">
+        <div class="badge">DEMO</div>
+        <div class="title">Animación de logo (3 piezas → logo completo)</div>
+        <div class="hint">Tip: mueve el mouse / haz scroll para ver el parallax sutil.</div>
+        <div class="hint muted">Esta demo usa PNG con transparencia (sin canvas), por lo que funciona también en <code>file://</code>.</div>
+      </header>
+
+      <section class="logo-wrap" aria-label="Logo animado">
+        <div class="logo-surface">
+          <svg id="logoSvg" class="logo-svg" role="img" aria-label="Logo IPR ensamblándose"></svg>
+        </div>
+        <div class="controls">
+          <button id="replay" type="button" class="btn">Repetir</button>
+          <label class="toggle">
+            <input id="debug" type="checkbox" />
+            <span>Debug (mostrar referencia)</span>
+          </label>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <span class="muted">Archivos origen:</span>
+        <code>Logo/Logo_completo.jpeg</code>
+        <code>Logo/Logo_1.jpeg</code>
+        <code>Logo/Logo_2.jpeg</code>
+        <code>Logo/Logo_3.jpeg</code>
+        <span class="muted">Procesados:</span>
+        <code>Logo/processed/logo_full.png</code>
+        <code>Logo/processed/logo_1.png</code>
+        <code>Logo/processed/logo_2.png</code>
+        <code>Logo/processed/logo_3.png</code>
+      </footer>
+    </main>
+
+    <script src="./motion2.js" defer></script>
+  </body>
+</html>
