@@ -608,6 +608,7 @@ p {
   border-radius: 999px;
   overflow: visible;
   box-shadow: none;
+  animation: none !important;
 }
 .logo-assemble--mark::before,
 .logo-assemble--mark::after{ display:none; }
@@ -631,6 +632,12 @@ p {
     )
     scale(var(--s, 1))
     rotate(var(--fromr, 0deg));
+  animation: none;
+}
+.logo-assemble.is-on{
+  animation: logoCardPop 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.logo-assemble.is-on .logo-piece{
   animation-name: pieceIn, idleFloat;
   animation-duration: 1.15s, 4.6s;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1), ease-in-out;
@@ -651,6 +658,11 @@ p {
       scale(var(--s, 1))
       rotate(0deg);
   }
+}
+@keyframes logoCardPop{
+  0%{ transform: translate3d(0,8px,0) scale(0.985); }
+  60%{ transform: translate3d(0,0,0) scale(1.01); }
+  100%{ transform: translate3d(0,0,0) scale(1); }
 }
 @keyframes idleFloat{
   0%,100%{

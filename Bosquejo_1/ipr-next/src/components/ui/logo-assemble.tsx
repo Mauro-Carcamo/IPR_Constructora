@@ -41,6 +41,39 @@ export function LogoAssemble({ variant = "card" }: { variant?: "card" | "mark" }
     };
   }, []);
 
+  useEffect(() => {
+    const wrap = wrapRef.current;
+    if (!wrap) return;
+
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    if (reduceMotion) {
+      wrap.classList.add("is-on");
+      return;
+    }
+
+    const play = () => {
+      wrap.classList.remove("is-on");
+      // force reflow so animation can restart if needed
+      void wrap.offsetWidth;
+      wrap.classList.add("is-on");
+    };
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          play();
+          obs.disconnect();
+          break;
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    obs.observe(wrap);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <div
       ref={wrapRef}
