@@ -4,10 +4,46 @@ import { useEffect, useRef } from "react";
 
 type CssVars = React.CSSProperties & Record<string, string>;
 
+// Piezas reales del logo (blanco de fondo): usamos `mix-blend-mode:multiply` en CSS
+// para que el blanco "desaparezca" y encajen correctamente.
 const PIECES = [
-  { key: "p1", href: "/Logo/Logo_prueba_1.png", w: 1024, h: 1536, ox: 0, oy: 0, s: 1, d: 0.0, fx: -46, fy: -28, fr: 10 },
-  { key: "p2", href: "/Logo/Logo_prueba_2.png", w: 1024, h: 1536, ox: 0, oy: 0, s: 1, d: 0.12, fx: 44, fy: -14, fr: -8 },
-  { key: "p3", href: "/Logo/Logo_prueba_3.png", w: 1024, h: 1536, ox: 0, oy: 0, s: 1, d: 0.22, fx: -18, fy: 34, fr: 7 },
+  {
+    key: "p1",
+    href: "/Logo/Logo_1.jpeg",
+    // final placement (percentages inside logo box)
+    x: "-2%",
+    y: "-4%",
+    w: "40%",
+    h: "120%",
+    d: 0.0,
+    fx: "-42%",
+    fy: "-18%",
+    fr: "10deg",
+  },
+  {
+    key: "p3",
+    href: "/Logo/Logo_3.jpeg",
+    x: "12%",
+    y: "10%",
+    w: "56%",
+    h: "112%",
+    d: 0.12,
+    fx: "22%",
+    fy: "28%",
+    fr: "-8deg",
+  },
+  {
+    key: "p2",
+    href: "/Logo/Logo_2.jpeg",
+    x: "30%",
+    y: "-10%",
+    w: "78%",
+    h: "92%",
+    d: 0.22,
+    fx: "34%",
+    fy: "-22%",
+    fr: "7deg",
+  },
 ];
 
 export function LogoAssemble({ variant = "card" }: { variant?: "card" | "mark" }) {
@@ -80,39 +116,29 @@ export function LogoAssemble({ variant = "card" }: { variant?: "card" | "mark" }
       className={`logo-assemble${variant === "mark" ? " logo-assemble--mark" : ""}`}
       aria-label="Logo IPR animado"
     >
-      <svg
-        className="logo-assemble__svg"
-        viewBox="0 0 1024 1536"
-        role="img"
-        aria-label="IPR Constructora"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
-        {PIECES.map((p) => {
-          const style: CssVars = {
-            "--ox": String(p.ox),
-            "--oy": String(p.oy),
-            "--s": String(p.s),
-            "--delay": `${p.d}s`,
-            "--fromx": String(p.fx),
-            "--fromy": String(p.fy),
-            "--fromr": `${p.fr}deg`,
-          };
-
-          return (
-            <g key={p.key} className="logo-piece" style={style}>
-              <image
-                href={p.href}
-                xlinkHref={p.href}
-                x="0"
-                y="0"
-                width={p.w}
-                height={p.h}
-                preserveAspectRatio="none"
-              />
-            </g>
-          );
-        })}
-      </svg>
+      {variant === "mark" ? (
+        <img className="logo-assemble__mark" src="/Logo/logo_full.png" alt="IPR Constructora" />
+      ) : (
+        <div className="logo-assemble__logo" aria-hidden="true">
+          {PIECES.map((p) => {
+            const style: CssVars = {
+              "--x": p.x,
+              "--y": p.y,
+              "--w": p.w,
+              "--h": p.h,
+              "--delay": `${p.d}s`,
+              "--fromx": p.fx,
+              "--fromy": p.fy,
+              "--fromr": p.fr,
+            };
+            return (
+              <div key={p.key} className="logo-piece" style={style}>
+                <img className="logo-piece__img" src={p.href} alt="" draggable={false} />
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
