@@ -275,6 +275,55 @@ p {
   .touch:hover .touch__text::after{ width: 100%; }
 }
 
+/* Responsive (mobile-first polish) */
+@media (max-width: 900px){
+  .nav__links{ display:none; }
+}
+
+@media (max-width: 760px){
+  .container{ padding: 0 20px; }
+  html{ scroll-padding-top: 76px; }
+
+  .hero--light{
+    padding-top: 170px;
+    padding-bottom: 52px;
+  }
+  .hero-h1{
+    font-size: clamp(38px, 9.2vw, 54px);
+    line-height: 1.06;
+    letter-spacing: -1.4px;
+    max-width: 20ch;
+  }
+  .hero-kicker{ font-size: 15px; line-height: 22px; }
+  .hero-lead{ font-size: 16px; line-height: 24px; }
+  .hero-pill{
+    width: clamp(92px, 22vw, 140px);
+    height: clamp(44px, 10vw, 66px);
+    margin: 0 6px;
+  }
+
+  .section.section-why{ padding: 140px 0 80px; }
+  .section.section-services{ padding: 110px 0 120px; }
+  .section.section-clients{ padding: 60px 0 140px; }
+  .section.section-cases{ padding: 50px 0 120px; }
+  .section.section-pricing{ padding: 60px 0 130px; }
+
+  .service-title{
+    font-size: clamp(34px, 9vw, 52px);
+    line-height: clamp(42px, 10vw, 62px);
+    letter-spacing: -1.2px;
+  }
+  .service-row{ gap: 14px; }
+  .service-num{ transform: translate3d(0, 10px, 0); }
+
+  .floating-social{
+    right: 12px;
+    bottom: 12px;
+    gap: 8px;
+  }
+  .floating-social__btn{ width: 48px; height: 48px; }
+}
+
 /* SplitText (GSAP hover) */
 .split-wrap{
   position: absolute;
