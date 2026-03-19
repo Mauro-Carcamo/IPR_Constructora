@@ -17,8 +17,7 @@ export function Footer() {
           <div className="footer-top">
             <div className="footer-brand">
               <a className="footer-logo" href="#inicio" aria-label="IPR Constructora">
-                <span className="footer-logo__ip">IPR</span>
-                <span className="footer-logo__sub">Constructora</span>
+                <img className="footer-logo__img" src="/Logo/ipr-logo.png" alt="IPR Constructora" />
               </a>
               <div className="footer-copy muted">Todos los derechos reservados.</div>
             </div>

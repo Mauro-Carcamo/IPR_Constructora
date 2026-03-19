@@ -171,11 +171,13 @@ p {
   align-items: center;
   gap: 12px;
 }
-.brand-wordmark{
-  height: 18px;
-  width: auto;
+.brand-logo{
+  width: 44px;
+  height: 44px;
   display: block;
-  mix-blend-mode: multiply;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 18px 46px rgba(0,0,0,.18);
 }
 .brand__text {
   font-weight: 700;
@@ -1682,6 +1684,14 @@ p {
   flex-direction: column;
   width: fit-content;
   line-height: 1;
+}
+.footer-logo__img{
+  width: 52px;
+  height: 52px;
+  display: block;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 22px 62px rgba(0,0,0,.35);
 }
 .footer-logo__ip {
   font-weight: 900;

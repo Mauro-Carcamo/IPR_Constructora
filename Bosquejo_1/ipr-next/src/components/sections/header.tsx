@@ -1,6 +1,5 @@
 "use client";
 
-import { LogoAssemble } from "@/components/ui/logo-assemble";
 import { useEffect, useState } from "react";
 
 export function Header() {
@@ -18,14 +17,7 @@ export function Header() {
       <div className="container">
         <nav className="nav">
           <a className="brand" href="#inicio" aria-label="IPR Constructora">
-            <LogoAssemble variant="mark" />
-            <img
-              className="brand-wordmark"
-              src="/Logo/WhatsApp Image 2026-03-18 at 2.43.51 PM (1).jpeg"
-              alt="IPR Constructora"
-              loading="eager"
-              decoding="async"
-            />
+            <img className="brand-logo" src="/Logo/ipr-logo.png" alt="IPR Constructora" />
             <span className="sr-only">IPR Constructora</span>
           </a>
           <div className="nav__links" aria-label="Navegación">
