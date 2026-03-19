@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { SplitText } from "@/components/ui/split-text";
-import { LogoAssemble } from "@/components/ui/logo-assemble";
 
 function useScrollParallax() {
   useEffect(() => {
@@ -61,15 +60,6 @@ export function Hero() {
               </a>
             </div>
           </div>
-
-          <div className="hero-visual" data-reveal>
-            <LogoAssemble />
-          </div>
-        </div>
-
-        <div className="hero-after" data-reveal>
-          <h2 className="hero-after__title">Proyectos de Construcción en Santiago</h2>
-          <p className="muted hero-after__text">Una muestra de proyectos y avances de obra. Arrastra para explorar.</p>
         </div>
       </div>
 

@@ -27,13 +27,13 @@ export function Landing() {
       <Header />
       <main>
         <Hero />
+        <Projects />
         <WhyUs />
         <CaseStudies />
         <Services />
         <Pricing />
         <Clients />
         <ParallaxCollage />
-        <Projects />
         <Testimonials />
         <Process />
         <Nosotros />

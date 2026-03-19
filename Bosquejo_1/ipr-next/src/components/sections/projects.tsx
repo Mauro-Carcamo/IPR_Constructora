@@ -2,7 +2,7 @@
 
 import { projects } from "@/lib/ipr-data";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 type SlideState = {
   slide: HTMLElement;
@@ -14,23 +14,16 @@ type SlideState = {
 export function Projects() {
   const shellRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
-  const pausedRef = useRef(false);
   const reduceMotion = useMemo(
     () => (typeof window !== "undefined" ? window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches : false),
     []
   );
-
-  const [isPaused, setIsPaused] = useState(false);
 
   const renderedSlides = useMemo(() => {
     // 3x render: original + 2 clones (equivale al slider original).
     const all = [...projects, ...projects, ...projects];
     return all.map((p, idx) => ({ p, key: `${p.id}-${idx}` }));
   }, []);
-
-  useEffect(() => {
-    pausedRef.current = isPaused;
-  }, [isPaused]);
 
   useEffect(() => {
     const shell = shellRef.current;
@@ -91,7 +84,7 @@ export function Projects() {
 
     const maybeCycleImages = (state: SlideState, now: number, focus: number) => {
       if (state.imgs.length < 2) return;
-      const shouldCycle = focus > 0.72 && !isDragging && !pausedRef.current;
+      const shouldCycle = focus > 0.72 && !isDragging;
       if (!shouldCycle) {
         if (state.activeIndex !== 0) setActiveImage(state, 0);
         state.cycleAt = 0;
@@ -145,7 +138,6 @@ export function Projects() {
       "touches" in e ? e.touches[0].clientX : (e as MouseEvent).pageX;
 
     const dragStart = (e: MouseEvent | TouchEvent) => {
-      if (pausedRef.current) return;
       isDragging = true;
       shell.classList.add("is-grabbing");
       startX = getPositionX(e);
@@ -173,7 +165,6 @@ export function Projects() {
     };
 
     const applyMomentum = () => {
-      if (pausedRef.current) return;
       const friction = 0.95;
       const minVelocity = 0.08;
 
@@ -208,7 +199,7 @@ export function Projects() {
     const startAutoScroll = () => {
       cancelAutoScroll();
       const animate = () => {
-        if (!isDragging && !pausedRef.current) {
+        if (!isDragging) {
           currentTranslate -= 0.5;
           prevTranslate = currentTranslate;
           checkPosition();
@@ -306,30 +297,13 @@ export function Projects() {
                 ))}
               </div>
               <div className="project-overlay">
-                <div className="project-top">
-                  <span className="chip">{p.chips[0]}</span>
-                  <span className="chip chip--muted">{p.chips[1]}</span>
-                </div>
                 <div className="project-bottom">
-                  <div className="project-kicker muted">{p.kicker}</div>
+                  <div className="project-kicker">{p.kicker}</div>
                   <h3 className="project-title">{p.title}</h3>
                 </div>
               </div>
             </article>
           ))}
-        </div>
-      </div>
-
-      <div className="container">
-        <div className="slider-controls">
-          <button
-            className="btn btn--ghost"
-            type="button"
-            onClick={() => setIsPaused((v) => !v)}
-          >
-            {isPaused ? "Reanudar movimiento" : "Pausar movimiento"}
-          </button>
-          <span className="hint">Arrastra para navegar</span>
         </div>
       </div>
     </section>

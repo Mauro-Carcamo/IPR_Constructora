@@ -19,6 +19,13 @@ export function Header() {
         <nav className="nav">
           <a className="brand" href="#inicio" aria-label="IPR Constructora">
             <LogoAssemble variant="mark" />
+            <img
+              className="brand-wordmark"
+              src="/Logo/WhatsApp Image 2026-03-18 at 2.43.51 PM (1).jpeg"
+              alt="IPR Constructora"
+              loading="eager"
+              decoding="async"
+            />
             <span className="sr-only">IPR Constructora</span>
           </a>
           <div className="nav__links" aria-label="Navegación">
