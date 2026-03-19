@@ -19,7 +19,7 @@ export function CaseStudies() {
             Proyectos destacados
           </h2>
           <p className="muted" data-reveal>
-            Una selección rápida para acercarnos al bloque “Case studies” del modelo.
+            Tres proyectos para ver estilo, estándar y tipo de ejecución.
           </p>
         </div>
 
@@ -44,4 +44,3 @@ export function CaseStudies() {
     </section>
   );
 }
-

@@ -20,11 +20,11 @@ export function WhyUs() {
               POR QUÉ IPR
             </div>
             <h2 id={sectionId} className="why-title" data-reveal>
-              Empresa constructora enfocada en velocidad, control y resultados reales.
+              Construcción con control, detalle y cumplimiento.
             </h2>
             <p className="muted" data-reveal>
-              Trabajamos de forma cercana, con estándares altos y un proceso claro desde la idea
-              hasta la entrega.
+              Planificamos, ejecutamos y entregamos con comunicación constante, control en obra y
+              terminaciones alineadas al estándar acordado.
             </p>
           </div>
 
@@ -40,11 +40,10 @@ export function WhyUs() {
         </div>
 
         <div className="why-ghost" aria-hidden="true">
-          <span>WHY</span>
-          <span>US</span>
+          <span>IPR</span>
+          <span>IPR</span>
         </div>
       </div>
     </section>
   );
 }
-

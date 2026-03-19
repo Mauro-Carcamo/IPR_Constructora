@@ -81,17 +81,17 @@ export const clientTags: ClientTag[] = [
   {
     id: "retail",
     title: "Retail",
-    description: "Diseño y construcción de locales para atraer, vender y escalar.",
+    description: "Locales pensados para experiencia, flujo y operación.",
   },
   {
     id: "oficinas",
     title: "Oficinas",
-    description: "Espacios funcionales y modernos, pensados para productividad y cultura.",
+    description: "Espacios funcionales para productividad y cultura de equipo.",
   },
   {
     id: "cafeterias",
     title: "Cafeterías",
-    description: "Experiencias de marca en interiorismo, materiales y flujo de atención.",
+    description: "Interiorismo, materiales y flujos de atención bien resueltos.",
   },
   {
     id: "salud",
@@ -183,4 +183,3 @@ export const projects: Project[] = [
     ],
   },
 ];
-

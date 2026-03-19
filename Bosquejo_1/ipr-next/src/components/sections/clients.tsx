@@ -54,8 +54,12 @@ export function Clients() {
             Clientes de IPR Constructora
           </h2>
           <p className="muted" data-reveal>
-            Trabajamos con empresas y particulares que buscan una constructora en Santiago confiable,
-            con experiencia y enfoque en resultados.
+            Trabajamos con empresas y particulares que valoran orden, transparencia y buena
+            ejecución.
+          </p>
+          <p className="muted" data-reveal>
+            El objetivo es simple: relaciones de largo plazo, basadas en calidad, plazos y
+            comunicación clara.
           </p>
         </div>
 

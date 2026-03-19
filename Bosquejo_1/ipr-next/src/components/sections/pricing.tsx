@@ -41,10 +41,10 @@ export function Pricing() {
 
         <div className="pricing-head">
           <h2 id={sectionId} data-reveal>
-            Una forma simple de cotizar y construir
+            Cotiza y construye con un plan claro
           </h2>
           <p className="muted" data-reveal>
-            Estructura inspirada en el bloque de “Pricing” del modelo, adaptada a IPR.
+            Te guiamos desde el levantamiento hasta la entrega, con hitos y alcances definidos.
           </p>
         </div>
 
@@ -71,4 +71,3 @@ export function Pricing() {
     </section>
   );
 }
-

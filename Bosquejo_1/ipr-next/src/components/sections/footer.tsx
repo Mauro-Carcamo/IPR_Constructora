@@ -20,7 +20,7 @@ export function Footer() {
                 <span className="footer-logo__ip">IPR</span>
                 <span className="footer-logo__sub">Constructora</span>
               </a>
-              <div className="footer-copy muted">All rights reserved.</div>
+              <div className="footer-copy muted">Todos los derechos reservados.</div>
             </div>
 
             <div className="footer-nav">
@@ -46,32 +46,33 @@ export function Footer() {
               <div className="footer-social__icons">
                 <a
                   className="social-btn"
-                  href="mailto:contacto@iprconstructora.cl?subject=Cotización%20IPR%20Constructora"
-                  aria-label="Enviar correo"
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp"
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path
-                      d="M4 7.5C4 6.11929 5.11929 5 6.5 5H17.5C18.8807 5 20 6.11929 20 7.5V16.5C20 17.8807 18.8807 19 17.5 19H6.5C5.11929 19 4 17.8807 4 16.5V7.5Z"
+                      d="M20 11.9C20 16.4 16.2 20 11.6 20c-1.4 0-2.8-.4-4-1.1L4 20l1.1-3.4A8 8 0 0 1 4 11.9C4 7.5 7.8 4 12.4 4 17 4 20 7.5 20 11.9Z"
                       stroke="currentColor"
                       strokeWidth="1.8"
+                      strokeLinejoin="round"
                     />
                     <path
-                      d="M4.5 7.7L10.6 11.4C11.4 11.9 12.4 11.9 13.2 11.4L19.5 7.7"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      d="M9.1 10.2c.2-1 .6-1.1 1.1-.4l.7 1c.2.3.2.6 0 .8l-.4.4c.6 1 1.4 1.7 2.4 2.3l.5-.4c.2-.2.6-.2.8 0l1 .7c.7.5.6 1-.4 1.2-1 .2-2.4-.1-4-1.4-1.6-1.3-2.4-2.6-2.1-3.6Z"
+                      fill="currentColor"
+                      opacity="0.85"
                     />
                   </svg>
                 </a>
                 <a
                   className="social-btn"
-                  href="https://www.instagram.com/constructoraipr?igsh=ZnI2dmprZHcwNzZq"
+                  href="https://www.instagram.com/constructoraipr/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path
                       d="M7.5 4.8H16.5C18.1 4.8 19.4 6.1 19.4 7.7V16.3C19.4 17.9 18.1 19.2 16.5 19.2H7.5C5.9 19.2 4.6 17.9 4.6 16.3V7.7C4.6 6.1 5.9 4.8 7.5 4.8Z"
                       stroke="currentColor"

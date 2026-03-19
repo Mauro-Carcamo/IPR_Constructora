@@ -46,23 +46,22 @@ export function Nosotros() {
 
             <div className="founder-text">
               <p className="muted" data-reveal>
-                Somos una empresa constructora en Santiago con una visión vanguardista, orientada a
-                desarrollar proyectos modernos, eficientes y sustentables.
+                Somos una empresa constructora en Santiago orientada a proyectos modernos,
+                eficientes y sustentables.
               </p>
               <p className="muted" data-reveal>
-                En IPR Constructora nos adaptamos a los nuevos desafíos de la construcción en Chile,
-                incorporando materiales amigables con el medio ambiente y tecnologías de última
-                generación.
+                Nos adaptamos a los desafíos de la construcción en Chile incorporando materiales
+                responsables y buenas prácticas de ejecución.
               </p>
               <p className="muted" data-reveal>
-                Nuestro enfoque se basa en el trabajo colaborativo, la cercanía con el cliente y el
-                cumplimiento de altos estándares en cada obra.
+                Nuestro enfoque es colaborativo: cercanía con el cliente, plazos claros y altos
+                estándares en obra.
               </p>
             </div>
 
             <a
               className="link-line"
-              href="https://www.instagram.com/constructoraipr?igsh=ZnI2dmprZHcwNzZq"
+              href="https://www.instagram.com/constructoraipr/"
               target="_blank"
               rel="noreferrer"
               data-reveal

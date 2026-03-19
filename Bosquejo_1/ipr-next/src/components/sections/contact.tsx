@@ -12,30 +12,32 @@ export function Contact() {
       <div className="container" data-reveal-group>
         <h2 data-reveal>Contacto Constructora en Santiago</h2>
         <p data-reveal>
-          Si buscas una empresa de construcción en Santiago para desarrollar tu proyecto, en IPR
-          Constructora estamos listos para ayudarte.
+          Cuéntanos tu proyecto y te orientamos con una cotización según alcance, plazos y
+          requerimientos.
         </p>
         <p className="muted" data-reveal>
-          Contáctanos para recibir asesoría y cotización personalizada según tus necesidades.
+          WhatsApp: <strong>+56 9 6124 5714</strong>
         </p>
         <div className="cta-row" data-reveal>
           <a
             className="btn btn--accent"
-            href="mailto:contacto@iprconstructora.cl?subject=Cotización%20IPR%20Constructora"
-            aria-label="Solicita tu cotización de construcción"
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Solicita tu cotización por WhatsApp"
           >
             <span className="btn__text">Solicita tu cotización</span>
             <SplitText text="Solicita tu cotización" />
           </a>
           <a
             className="btn btn--ghost"
-            href={WHATSAPP_LINK}
+            href={INSTAGRAM_LINK}
             target="_blank"
             rel="noreferrer"
-            aria-label="Escríbenos por WhatsApp"
+            aria-label="Ver Instagram de IPR Constructora"
           >
-            <span className="btn__text">Escríbenos por WhatsApp</span>
-            <SplitText text="Escríbenos por WhatsApp" />
+            <span className="btn__text">Ver Instagram</span>
+            <SplitText text="Ver Instagram" />
           </a>
         </div>
 

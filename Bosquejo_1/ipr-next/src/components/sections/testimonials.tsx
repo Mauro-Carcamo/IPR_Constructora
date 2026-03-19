@@ -29,14 +29,14 @@ export function Testimonials() {
     <section className="section section-test" id="faq" aria-labelledby={sectionId}>
       <div className="container" data-reveal-group>
         <div className="section-label" data-reveal>
-          PREGUNTAS
+          FAQ
         </div>
         <div className="test-head">
           <h2 id={sectionId} data-reveal>
-            Transparencia y claridad
+            Preguntas frecuentes
           </h2>
           <p className="muted" data-reveal>
-            Respuestas rápidas a lo más importante antes de comenzar.
+            Respuestas cortas a lo más importante antes de empezar.
           </p>
         </div>
 
@@ -68,4 +68,3 @@ export function Testimonials() {
     </section>
   );
 }
-

@@ -173,12 +173,12 @@ export function Services() {
               Servicios de Construcción en Santiago
             </h2>
             <p data-reveal>
-              En IPR Constructora ofrecemos servicios de construcción en Santiago adaptados a
-              distintos tipos de proyectos, tanto para empresas como para clientes particulares.
+              Ejecutamos proyectos para empresas y particulares: oficinas, vivienda, retail y obras
+              civiles. Nos adaptamos al alcance, plazos y estándar que necesitas.
             </p>
             <p className="muted" data-reveal>
-              Nos especializamos en entregar soluciones eficientes, combinando diseño, calidad y
-              cumplimiento en cada proyecto de construcción en Chile.
+              Si ya tienes diseño, lo construimos; si no, te acompañamos con definición de
+              materiales, terminaciones y coordinación de especialidades.
             </p>
           </div>
         </div>

@@ -28,10 +28,10 @@ export function Process() {
         </div>
         <div className="process-head">
           <h2 id={sectionId} data-reveal>
-            De la idea a la entrega — te acompañamos
+            De la idea a la entrega
           </h2>
           <p className="muted" data-reveal>
-            Un proceso simple, con etapas claras y control en obra.
+            Etapas claras, control en obra y comunicación constante.
           </p>
         </div>
 
@@ -48,4 +48,3 @@ export function Process() {
     </section>
   );
 }
-

@@ -276,7 +276,7 @@ export function Projects() {
         <div className="section-head">
           <h2 data-reveal>Proyectos de Construcción en Santiago</h2>
           <p className="muted" data-reveal>
-            Revisa algunos proyectos (renders/fotos) ejecutados con altos estándares de calidad.
+            Una muestra de proyectos y avances de obra. Arrastra para explorar.
           </p>
         </div>
       </div>
