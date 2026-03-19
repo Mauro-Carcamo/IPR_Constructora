@@ -12,14 +12,14 @@ export function CaseStudies() {
     <section className="section section-cases" id="casos" aria-labelledby={sectionId}>
       <div className="container" data-reveal-group>
         <div className="section-label" data-reveal>
-          CASOS
+          ÚLTIMOS PROYECTOS
         </div>
         <div className="cases-head">
           <h2 id={sectionId} data-reveal>
-            Proyectos destacados
+            Últimos proyectos
           </h2>
           <p className="muted" data-reveal>
-            Tres proyectos para ver estilo, estándar y tipo de ejecución.
+            Proyectos recientes y avances de obra para ver estándar y terminaciones.
           </p>
         </div>
 

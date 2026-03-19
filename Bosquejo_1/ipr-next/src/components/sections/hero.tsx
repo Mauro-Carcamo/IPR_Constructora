@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { SplitText } from "@/components/ui/split-text";
-import Image from "next/image";
 import { LogoAssemble } from "@/components/ui/logo-assemble";
 
 function useScrollParallax() {
@@ -47,11 +46,7 @@ export function Hero() {
             </p>
 
             <h1 className="hero-h1" data-reveal>
-              Constructora en Santiago | IPR{" "}
-              <span className="hero-pill" aria-hidden="true">
-                <Image src="/imagenes/WhatsApp Image 2026-03-18 at 2.41.43 PM.jpeg" alt="" fill sizes="160px" />
-              </span>{" "}
-              Constructora
+              Constructora en Santiago | IPR Constructora
             </h1>
 
             <p className="hero-lead" data-reveal>
@@ -64,24 +59,17 @@ export function Hero() {
                 <span className="btn__text">Ver proyectos</span>
                 <SplitText text="Ver proyectos" />
               </a>
-
-              <div className="hero-rating" aria-label="5 de 5 estrellas">
-                <span className="hero-rating__mark" aria-hidden="true">
-                  C
-                </span>
-                <div className="hero-rating__meta">
-                  <div className="hero-stars" aria-hidden="true">
-                    ★★★★★
-                  </div>
-                  <div className="hero-rating__text">5/5 RATING</div>
-                </div>
-              </div>
             </div>
           </div>
 
           <div className="hero-visual" data-reveal>
             <LogoAssemble />
           </div>
+        </div>
+
+        <div className="hero-after" data-reveal>
+          <h2 className="hero-after__title">Proyectos de Construcción en Santiago</h2>
+          <p className="muted hero-after__text">Una muestra de proyectos y avances de obra. Arrastra para explorar.</p>
         </div>
       </div>
 
