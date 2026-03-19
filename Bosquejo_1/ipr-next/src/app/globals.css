@@ -10,6 +10,7 @@
   --panel: #ffffff;
   --panel-2: #f7f7f7;
   --container: 1130px;
+  --header-h: 64px;
   --r: 18px;
   --slide-h: clamp(320px, 37.5vw, 540px);
   --slide-w: clamp(420px, 50vw, 720px);
@@ -45,7 +46,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  scroll-padding-top: calc(var(--header-h) + 20px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -146,12 +147,19 @@ p {
   background: transparent;
   border-bottom: 0;
   pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  transition: background-color .28s ease, border-color .28s ease, backdrop-filter .28s ease;
+}
+.site-header.is-stuck{
+  background: rgba(242,242,242,.78);
+  border-bottom: 1px solid rgba(13,13,13,.10);
+  backdrop-filter: blur(12px);
 }
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: var(--header-h);
   padding: 0;
 }
 .nav > *{
@@ -282,10 +290,10 @@ p {
 
 @media (max-width: 760px){
   .container{ padding: 0 20px; }
-  html{ scroll-padding-top: 76px; }
+  html{ scroll-padding-top: calc(var(--header-h) + 16px); }
 
   .hero--light{
-    padding-top: 170px;
+    padding-top: calc(var(--header-h) + 64px);
     padding-bottom: 52px;
   }
   .hero-h1{
@@ -425,7 +433,7 @@ p {
 .hero--light{
   border-top: 0;
   background: var(--surface);
-  padding-top: 240px;
+  padding-top: calc(var(--header-h) + 96px);
   padding-bottom: 64px;
 }
 .hero-center{
