@@ -8,13 +8,18 @@ const INSTAGRAM_LINK = "https://www.instagram.com/constructoraipr/";
 
 export function Contact() {
   return (
-    <section className="section" id="contacto" aria-label="Contacto">
+    <section className="section section-contact" id="contacto" aria-label="Contacto">
       <div className="container" data-reveal-group>
-        <h2 data-reveal>Contacto Constructora en Santiago</h2>
+        <div className="section-label section-label--accent" data-reveal>
+          CONTACTO
+        </div>
+        <h2 data-reveal>Solicita tu cotización</h2>
+        <p data-reveal>¿Buscas una constructora en Chile para tu proyecto?</p>
         <p data-reveal>
-          Cuéntanos tu proyecto y te orientamos con una cotización según alcance, plazos y
-          requerimientos.
+          En IPR Constructora te ayudamos a desarrollar obras industriales, comerciales,
+          habitacionales y civiles con soluciones eficientes y profesionales.
         </p>
+        <p data-reveal>Completa el formulario y recibe una cotización personalizada.</p>
         <p className="muted" data-reveal>
           WhatsApp: <strong>+56 9 6124 5714</strong>
         </p>

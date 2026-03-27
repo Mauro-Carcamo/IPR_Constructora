@@ -1,65 +1,39 @@
 "use client";
 
 import { services } from "@/lib/ipr-data";
-import gsap from "gsap";
-import { type RefObject, useEffect, useId, useRef } from "react";
-
-function useServicesHover(root: RefObject<HTMLElement | null>) {
-  useEffect(() => {
-    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    if (reduceMotion) return;
-    if (!root.current) return;
-
-    const lines = Array.from(root.current.querySelectorAll<HTMLElement>("[data-service-line]"));
-
-    const getServiceMove = (line: HTMLElement) => line.querySelector<HTMLElement>(".service-move");
-
-    const onEnter = (e: Event) => {
-      const line = e.currentTarget as HTMLElement;
-      const move = getServiceMove(line);
-      if (move) {
-        gsap.killTweensOf(move);
-        gsap.to(move, { y: "-120px", duration: 0.65, ease: "power3.out" });
-      }
-    };
-
-    const onLeave = (e?: Event) => {
-      const line = e?.currentTarget as HTMLElement | undefined;
-      const move = line ? getServiceMove(line) : null;
-      if (move) {
-        gsap.killTweensOf(move);
-        gsap.to(move, { y: "0px", duration: 0.55, ease: "power3.out" });
-      }
-    };
-
-    lines.forEach((line) => {
-      line.addEventListener("mouseenter", onEnter);
-      line.addEventListener("mouseleave", onLeave);
-      line.addEventListener("click", (e) => e.preventDefault());
-    });
-
-    return () => {
-      lines.forEach((line) => {
-        line.removeEventListener("mouseenter", onEnter);
-        line.removeEventListener("mouseleave", onLeave);
-      });
-    };
-  }, [root]);
-}
+import { useEffect, useId, useRef } from "react";
 
 export function Services() {
   const sectionId = useId();
   const rootRef = useRef<HTMLElement | null>(null);
 
-  useServicesHover(rootRef);
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const lines = Array.from(root.querySelectorAll<HTMLElement>("[data-service-line]"));
+    if (!lines.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          entry.target.classList.toggle("is-active", entry.isIntersecting);
+        }
+      },
+      {
+        root: null,
+        threshold: 0.6,
+        rootMargin: "-40% 0px -40% 0px",
+      }
+    );
+
+    lines.forEach((line) => observer.observe(line));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section
-      ref={rootRef}
-      className="section section-services"
-      id="servicios"
-      aria-labelledby={sectionId}
-    >
+    <section ref={rootRef} className="section section-services" id="servicios" aria-labelledby={sectionId}>
       <div className="services-top">
         <div className="container" data-reveal-group>
           <div className="section-label section-label--accent" data-reveal>
@@ -71,20 +45,20 @@ export function Services() {
             </h2>
             <p data-reveal>
               Ejecutamos proyectos para empresas y particulares: oficinas, vivienda, retail y obras
-              civiles. Nos adaptamos al alcance, plazos y estÃ¡ndar que necesitas.
+              civiles. Nos adaptamos al alcance, plazos y estÃƒÂ¡ndar que necesitas.
             </p>
             <p className="muted" data-reveal>
-              Si ya tienes diseÃ±o, lo construimos; si no, te acompaÃ±amos con definiciÃ³n de
-              materiales, terminaciones y coordinaciÃ³n de especialidades.
+              Si ya tienes diseÃƒÂ±o, lo construimos; si no, te acompaÃƒÂ±amos con definiciÃƒÂ³n de
+              materiales, terminaciones y coordinaciÃƒÂ³n de especialidades.
             </p>
           </div>
         </div>
       </div>
 
       <div className="services-bottom" data-services>
-        {services.map((s) => (
+        {services.map((service) => (
           <button
-            key={s.id}
+            key={service.id}
             className="service-line"
             type="button"
             data-service-line
@@ -92,19 +66,18 @@ export function Services() {
             <span className="service-inner container" aria-hidden="true">
               <span className="service-move">
                 <span className="service-row service-row--front">
-                  <span className="service-title">{s.title}</span>
-                  <span className="service-num">{s.num}</span>
+                  <span className="service-title">{service.title}</span>
+                  <span className="service-num">{service.num}</span>
                 </span>
                 <span className="service-row service-row--back">
                   <span className="service-copy">
-                    <span className="service-copy__accent">IPR</span>
-                    <span className="service-copy__text">{s.description}</span>
+                    <span className="service-copy__text">{service.description}</span>
                   </span>
-                  <span className="service-num">{s.num}</span>
+                  <span className="service-num">{service.num}</span>
                 </span>
               </span>
             </span>
-            <span className="sr-only">{s.title}</span>
+            <span className="sr-only">{service.title}</span>
           </button>
         ))}
       </div>
