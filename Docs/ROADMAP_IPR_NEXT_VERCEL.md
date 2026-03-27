@@ -44,7 +44,7 @@ Prioridad alta (replica “sensación”):
 - Clientes (cards hover con reveal)
 - Proyectos (slider infinito + crossfade + texto + parallax interno)
 - Nosotros (layout tipo founder: texto + imagen + firma animada)
-- Footer (nav + RRSS + CTAs)
+- Footer (CTA centrado + RRSS + carrusel de proyectos)
 
 ## 4) SEO + performance (1–2 días)
 

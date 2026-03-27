@@ -1,44 +1,76 @@
-# Imágenes IPR — mapeo para Proyectos (carrusel)
+# Imágenes IPR — mapeo de rutas
 
-Este archivo sirve para **asociar** las imágenes de `imagenes/` a “Proyectos” y mantener un orden consistente en el carrusel.
+Este documento registra las rutas de imagen que usa la página para evitar roturas cuando cambian nombres o se reordenan assets.
 
-## Usadas actualmente en el carrusel `#proyectos`
+## Carrusel principal de proyectos
 
-En `Bosquejo_1/index.html`:
+Ubicado en `Bosquejo_1/ipr-next/src/lib/ipr-data.ts` y consumido por `Bosquejo_1/ipr-next/src/components/sections/projects.tsx`.
 
-### The Coffee (Finalizado)
+### The Coffee
 
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.42 PM.jpeg` (vista general alternativa)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.43 PM.jpeg` (vista general)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.43 PM (1).jpeg` (vista general alternativa)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.43 PM (3).jpeg` (interior / detalles)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.43 PM (2).jpeg` (interior / detalle)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.44 PM.jpeg` (interior / detalles)
+- `/imagenes/Ipr_the_coffee_1.jpeg`
+- `/imagenes/Ipr_the_coffee_2.jpeg`
+- `/imagenes/Ipr_the_coffee_3.jpeg`
 
-### Norai (Render)
+### The Coffee — detalle
 
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.47 PM.jpeg` (render interior)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.47 PM (2).jpeg` (comedor)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.46 PM (2).jpeg` (comedor / barra)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.47 PM (1).jpeg` (cocina)
+- `/imagenes/Ipr_the_coffee_4.jpeg`
+- `/imagenes/Ipr_the_coffee_5.jpeg`
+- `/imagenes/Ipr_the_coffee_6.jpeg`
 
-### Cinépolis (Ejecución)
+### Norai
 
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.45 PM (1).jpeg` (confitería)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.45 PM (2).jpeg` (confitería alternativa)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.45 PM (3).jpeg` (confitería alternativa)
+- `/imagenes/Ipr_norai_1.jpeg`
+- `/imagenes/Ipr_norai_2.jpeg`
+- `/imagenes/Ipr_norai_3.jpeg`
 
-### Ejecución en terreno (En proceso)
+### Norai — back of house
 
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.47 PM (3).jpeg` (tabiquería / instalaciones)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.46 PM.jpeg` (obra gruesa / avance)
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.46 PM (1).jpeg` (fachada/vidrios en ejecución)
+- `/imagenes/Ipr_norai_2.jpeg`
+- `/imagenes/Ipr_norai_3.jpeg`
 
-## Pendientes por clasificar (no usadas aún en carrusel)
+### Cinépolis
 
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.44 PM (1).jpeg`
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.44 PM (2).jpeg`
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.44 PM (3).jpeg`
-- `imagenes/WhatsApp Image 2026-03-18 at 2.41.45 PM.jpeg`
+- `/imagenes/Ipr_cinepolis_1.jpeg`
+- `/imagenes/Ipr_cinepolis_2.jpeg`
+- `/imagenes/Ipr_cinepolis_3.jpeg`
 
-Siguiente paso recomendado: asignar estas imágenes a 1–2 proyectos adicionales o usarlas como “alternativas” (para crossfade) dentro de los slides existentes.
+### Ejecución en terreno
+
+- `/imagenes/Ipr_cinepolis_4.jpeg`
+- `/imagenes/Ipr_cinepolis_3.jpeg`
+- `/imagenes/Ipr_cinepolis_2.jpeg`
+
+## Footer carousel
+
+Ubicado en `Bosquejo_1/ipr-next/src/components/sections/footer.tsx`.
+
+Usa únicamente las rutas de origen `Ipr_*`, agrupadas por proyecto:
+
+### The Coffee
+
+- `/imagenes/Ipr_the_coffee_1.jpeg`
+- `/imagenes/Ipr_the_coffee_2.jpeg`
+- `/imagenes/Ipr_the_coffee_3.jpeg`
+- `/imagenes/Ipr_the_coffee_4.jpeg`
+- `/imagenes/Ipr_the_coffee_5.jpeg`
+- `/imagenes/Ipr_the_coffee_6.jpeg`
+
+### Norai
+
+- `/imagenes/Ipr_norai_1.jpeg`
+- `/imagenes/Ipr_norai_2.jpeg`
+- `/imagenes/Ipr_norai_3.jpeg`
+
+### Cinépolis
+
+- `/imagenes/Ipr_cinepolis_1.jpeg`
+- `/imagenes/Ipr_cinepolis_2.jpeg`
+- `/imagenes/Ipr_cinepolis_3.jpeg`
+- `/imagenes/Ipr_cinepolis_4.jpeg`
+
+## Regla práctica
+
+- Si una imagen cambia de nombre, primero actualizar la ruta aquí.
+- Después actualizar el componente que la consume.
+- El footer debe conservar el patrón visual: fotos difuminadas, movimiento continuo y logo centrado.

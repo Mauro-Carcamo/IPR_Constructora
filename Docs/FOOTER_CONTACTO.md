@@ -1,22 +1,25 @@
-# Footer — contacto IPR (estilo referencia)
+# Footer — contacto IPR
 
-El footer quedó inspirado en el layout que compartiste: logo/brand, links de navegación con underline animado, y botones/CTA de contacto.
+Footer limpio y centrado:
+
+- CTA principal: `Solicita tu cotización`
+- RRSS junto al CTA, sin texto de acompañamiento
+- Carrusel inferior con fotos de proyectos
+- Logo blanco centrado sobre el carrusel
+- Sin menú de navegación en el footer
 
 ## Dónde está
 
-- `Bosquejo_1/index.html` (`footer.site-footer`)
-- `Bosquejo_1/styles.css` (clases `.footer-*` y `.social-btn`)
-- `Bosquejo_1/main.js` (`initFooterYear()`)
+- `Bosquejo_1/ipr-next/src/components/sections/footer.tsx`
+- `Bosquejo_1/ipr-next/src/app/globals.css`
 
-## Qué editar
+## Ajustes clave
 
-- Email: `mailto:` en `Bosquejo_1/index.html` (busca `contacto@iprconstructora.cl`)
-- Instagram: link a `constructoraipr`
-- Links del footer: `.footer-nav` (`#inicio`, `#servicios`, `#proyectos`, `#clientes`, `#contacto`)
-- Imagen inferior: `img.footer-img` (`src`)
+- WhatsApp: `https://wa.me/56961245714`
+- Instagram: `https://www.instagram.com/constructoraipr/`
+- Logo central: `public/Logo/ipr-logo-footer-white.png`
+- Imágenes del carrusel: `public/imagenes/Ipr_*.jpeg`
 
-## Nota (WhatsApp)
+## Nota
 
-El botón “Escríbenos por WhatsApp” actualmente apunta a `#contacto`.
-Cuando tengas el número, cambia el link a `https://wa.me/<codigoPaisNumero>` o `https://api.whatsapp.com/send?phone=<...>`.
-
+El footer está pensado para verse sólido en desktop y mobile, con fotos suavemente difuminadas y movimiento continuo.

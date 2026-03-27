@@ -6,11 +6,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const IMAGES = [
-  "/imagenes/WhatsApp Image 2026-03-18 at 2.41.46 PM (2).jpeg",
-  "/imagenes/WhatsApp Image 2026-03-18 at 2.41.44 PM (3).jpeg",
-  "/imagenes/WhatsApp Image 2026-03-18 at 2.41.43 PM (1).jpeg",
-  "/imagenes/WhatsApp Image 2026-03-18 at 2.41.47 PM (2).jpeg",
-  "/imagenes/WhatsApp Image 2026-03-18 at 2.41.45 PM (1).jpeg",
+  "/imagenes/Ipr_norai_1.jpeg",
+  "/imagenes/Ipr_the_coffee_4.jpeg",
+  "/imagenes/Ipr_the_coffee_1.jpeg",
+  "/imagenes/Ipr_norai_3.jpeg",
+  "/imagenes/Ipr_cinepolis_1.jpeg",
 ];
 
 export function ParallaxCollage() {
@@ -73,7 +73,7 @@ export function ParallaxCollage() {
               src={src}
               alt=""
               fill
-              sizes="(min-width: 980px) 420px, 60vw"
+              sizes="(min-width: 1400px) 420px, (min-width: 980px) 30vw, 60vw"
               priority={false}
             />
           </div>

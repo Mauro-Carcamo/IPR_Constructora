@@ -27,17 +27,17 @@ export function Landing() {
       <Header />
       <main>
         <Hero />
+        <Nosotros />
+        <Services />
         <Projects />
         <WhyUs />
         <CaseStudies />
-        <Services />
         <Pricing />
         <Clients />
         <ParallaxCollage />
-        <Testimonials />
         <Process />
-        <Nosotros />
         <Contact />
+        <Testimonials />
       </main>
       <Footer />
     </div>

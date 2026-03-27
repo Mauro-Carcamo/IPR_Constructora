@@ -13,8 +13,9 @@ Esta carpeta contiene la documentación base para diseñar y construir la **land
 - `Docs/CLIENTES_SECCION.md` — sección de clientes con cards hover (estilo referencia).
 - `Docs/SERVICIOS_SECCION.md` — sección de servicios estilo “line hover” con imágenes flotantes.
 - `Docs/NOSOTROS_SECCION.md` — sección “Nosotros” tipo founder (texto + imagen + firma).
-- `Docs/FOOTER_CONTACTO.md` — footer estilo referencia (nav + RRSS + CTAs de contacto).
+- `Docs/FOOTER_CONTACTO.md` — footer limpio (CTA centrado + RRSS + carrusel de proyectos).
 - `Docs/IMAGENES_IPR_PROYECTOS.md` — mapeo de imágenes de `imagenes/` a proyectos del carrusel.
+- `Docs/PROYECTOS_REFERENCIA_IPR.md` — referencia rápida de proyectos y rutas usadas.
 - `Docs/CLI_HERRAMIENTAS.md` — CLIs/herramientas (Next, Vercel, opcional Vue).
 - `Docs/ROADMAP_IPR_NEXT_VERCEL.md` — roadmap ordenado para definir y construir la web con modelo `pagina_modelo.md`.
 

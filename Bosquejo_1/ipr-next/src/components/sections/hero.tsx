@@ -41,22 +41,21 @@ export function Hero() {
         <div className="hero-layout">
           <div className="hero-copy">
             <p className="hero-kicker" data-reveal>
-              IPR Constructora — oficinas, viviendas, retail y obras civiles
+              Constructora en Chile
             </p>
 
             <h1 className="hero-h1" data-reveal>
-              Constructora en Santiago | IPR Constructora
+              Obras civiles, industriales y proyectos habitacionales
             </h1>
 
             <p className="hero-lead" data-reveal>
-              Diseñamos y ejecutamos espacios funcionales, modernos y eficientes, acompañando a cada cliente desde la idea inicial
-              hasta la entrega final.
+              Desarrollamos proyectos de construcción con altos estándares de calidad, seguridad y cumplimiento de plazos. En IPR Constructora ejecutamos soluciones eficientes para empresas y particulares.
             </p>
 
             <div className="hero-actions" data-reveal>
-              <a className="btn btn--accent" href="#proyectos" aria-label="Ver proyectos IPR">
-                <span className="btn__text">Ver proyectos</span>
-                <SplitText text="Ver proyectos" />
+              <a className="btn btn--accent" href="#contacto" aria-label="Solicitar cotización">
+                <span className="btn__text">Solicitar cotización</span>
+                <SplitText text="Solicitar cotización" />
               </a>
             </div>
           </div>

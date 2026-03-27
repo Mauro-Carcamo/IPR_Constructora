@@ -48,7 +48,7 @@ export function Testimonials() {
                 key={item.q}
                 className={`faq-item${isOpen ? " is-open" : ""}`}
                 type="button"
-                onClick={() => setOpen((v) => (v === idx ? null : idx))}
+                onClick={() => setOpen((value) => (value === idx ? null : idx))}
                 data-reveal
               >
                 <div className="faq-q">

@@ -1,6 +1,7 @@
 "use client";
 
 import { services } from "@/lib/ipr-data";
+import gsap from "gsap";
 import { type RefObject, useEffect, useId, useRef } from "react";
 
 function useServicesHover(root: RefObject<HTMLElement | null>) {
@@ -9,116 +10,26 @@ function useServicesHover(root: RefObject<HTMLElement | null>) {
     if (reduceMotion) return;
     if (!root.current) return;
 
-    const isDesktop = () => window.innerWidth > 977;
-    const servicesView = root.current.querySelector<HTMLElement>(".services-view");
-    if (!servicesView) return;
-
     const lines = Array.from(root.current.querySelectorAll<HTMLElement>("[data-service-line]"));
 
-    let activeImages: HTMLImageElement[] = [];
-    let occupiedPositions: { left: number; top: number }[] = [];
-    let animationTimeouts: number[] = [];
+    const getServiceMove = (line: HTMLElement) => line.querySelector<HTMLElement>(".service-move");
 
-    const clearAllTimeouts = () => {
-      animationTimeouts.forEach((t) => window.clearTimeout(t));
-      animationTimeouts = [];
-    };
-
-    const getMaxWidth = () => {
-      const vw = window.innerWidth;
-      if (vw > 1440) return 480;
-      if (vw > 1200) return 420;
-      if (vw > 977) return 360;
-      return 320;
-    };
-
-    const isOverlapping = (newPos: { left: number; top: number }) => {
-      const maxWidth = getMaxWidth();
-      const minDistance = maxWidth * 0.7;
-      for (const pos of occupiedPositions) {
-        const newLeftPx = (newPos.left / 100) * window.innerWidth;
-        const newTopPx = (newPos.top / 100) * window.innerHeight;
-        const existingLeftPx = (pos.left / 100) * window.innerWidth;
-        const existingTopPx = (pos.top / 100) * window.innerHeight;
-
-        const distance = Math.sqrt(
-          Math.pow(newLeftPx - existingLeftPx, 2) + Math.pow(newTopPx - existingTopPx, 2)
-        );
-        if (distance < minDistance) return true;
+    const onEnter = (e: Event) => {
+      const line = e.currentTarget as HTMLElement;
+      const move = getServiceMove(line);
+      if (move) {
+        gsap.killTweensOf(move);
+        gsap.to(move, { y: "-120px", duration: 0.65, ease: "power3.out" });
       }
-      return false;
     };
 
-    const getRandomPosition = () => {
-      const maxWidth = getMaxWidth();
-      let attempts = 0;
-      let position: { left: number; top: number };
-
-      do {
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const padding = 20;
-        const randomLeftPx = padding + Math.random() * (viewportWidth - maxWidth - padding * 2);
-        const randomTopPx = padding + Math.random() * (viewportHeight - 300 - padding * 2);
-        position = {
-          left: (randomLeftPx / viewportWidth) * 100,
-          top: (randomTopPx / viewportHeight) * 100,
-        };
-        attempts++;
-        if (attempts > 150) break;
-      } while (isOverlapping(position));
-
-      return position;
-    };
-
-    const clearImages = () => {
-      activeImages.forEach((img) => {
-        img.classList.remove("is-in");
-        window.setTimeout(() => img.remove(), 520);
-      });
-      activeImages = [];
-      occupiedPositions = [];
-    };
-
-    const showImages = (line: HTMLElement) => {
-      if (!isDesktop()) return;
-      clearAllTimeouts();
-      clearImages();
-
-      const raw = line.getAttribute("data-images") || "";
-      const sources = raw
-        .split("|")
-        .map((s) => s.trim())
-        .filter(Boolean);
-      if (!sources.length) return;
-
-      const maxWidth = getMaxWidth();
-      sources.forEach((src, index) => {
-        const timeoutId = window.setTimeout(() => {
-          if (!isDesktop()) return;
-          const img = document.createElement("img");
-          img.src = src;
-          img.alt = "";
-          img.loading = "lazy";
-          img.className = "services-float";
-          const position = getRandomPosition();
-          occupiedPositions.push(position);
-          img.style.left = `${position.left}vw`;
-          img.style.top = `${position.top}vh`;
-          img.style.maxWidth = `${maxWidth}px`;
-          servicesView.appendChild(img);
-          activeImages.push(img);
-          const showTimeoutId = window.setTimeout(() => img.classList.add("is-in"), 50);
-          animationTimeouts.push(showTimeoutId);
-        }, index * 900);
-        animationTimeouts.push(timeoutId);
-      });
-    };
-
-    const onEnter = (e: Event) => showImages(e.currentTarget as HTMLElement);
-    const onLeave = () => {
-      clearAllTimeouts();
-      clearImages();
+    const onLeave = (e?: Event) => {
+      const line = e?.currentTarget as HTMLElement | undefined;
+      const move = line ? getServiceMove(line) : null;
+      if (move) {
+        gsap.killTweensOf(move);
+        gsap.to(move, { y: "0px", duration: 0.55, ease: "power3.out" });
+      }
     };
 
     lines.forEach((line) => {
@@ -127,25 +38,11 @@ function useServicesHover(root: RefObject<HTMLElement | null>) {
       line.addEventListener("click", (e) => e.preventDefault());
     });
 
-    servicesView.addEventListener("mouseleave", onLeave);
-
-    const onResize = () => {
-      if (!isDesktop()) {
-        clearAllTimeouts();
-        clearImages();
-      }
-    };
-    window.addEventListener("resize", onResize);
-
     return () => {
-      window.removeEventListener("resize", onResize);
-      servicesView.removeEventListener("mouseleave", onLeave);
       lines.forEach((line) => {
         line.removeEventListener("mouseenter", onEnter);
         line.removeEventListener("mouseleave", onLeave);
       });
-      clearAllTimeouts();
-      clearImages();
     };
   }, [root]);
 }
@@ -170,15 +67,15 @@ export function Services() {
           </div>
           <div className="services-head">
             <h2 id={sectionId} data-reveal>
-              Servicios de Construcción en Santiago
+              Servicios de ConstrucciÃ³n en Santiago
             </h2>
             <p data-reveal>
               Ejecutamos proyectos para empresas y particulares: oficinas, vivienda, retail y obras
-              civiles. Nos adaptamos al alcance, plazos y estándar que necesitas.
+              civiles. Nos adaptamos al alcance, plazos y estÃ¡ndar que necesitas.
             </p>
             <p className="muted" data-reveal>
-              Si ya tienes diseño, lo construimos; si no, te acompañamos con definición de
-              materiales, terminaciones y coordinación de especialidades.
+              Si ya tienes diseÃ±o, lo construimos; si no, te acompaÃ±amos con definiciÃ³n de
+              materiales, terminaciones y coordinaciÃ³n de especialidades.
             </p>
           </div>
         </div>
@@ -191,7 +88,6 @@ export function Services() {
             className="service-line"
             type="button"
             data-service-line
-            data-images={s.images.join("|")}
           >
             <span className="service-inner container" aria-hidden="true">
               <span className="service-move">
@@ -200,7 +96,10 @@ export function Services() {
                   <span className="service-num">{s.num}</span>
                 </span>
                 <span className="service-row service-row--back">
-                  <span className="service-title">{s.title}</span>
+                  <span className="service-copy">
+                    <span className="service-copy__accent">IPR</span>
+                    <span className="service-copy__text">{s.description}</span>
+                  </span>
                   <span className="service-num">{s.num}</span>
                 </span>
               </span>
@@ -209,8 +108,6 @@ export function Services() {
           </button>
         ))}
       </div>
-
-      <div className="services-view" aria-hidden="true" />
     </section>
   );
 }
