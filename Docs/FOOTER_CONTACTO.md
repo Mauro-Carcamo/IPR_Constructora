@@ -7,6 +7,7 @@ Footer limpio y centrado:
 - Carrusel inferior con fotos de proyectos
 - Logo blanco centrado sobre el carrusel
 - Sin menú de navegación en el footer
+- Fotos suavemente difuminadas y carrusel continuo lento
 
 ## Dónde está
 
@@ -22,4 +23,4 @@ Footer limpio y centrado:
 
 ## Nota
 
-El footer está pensado para verse sólido en desktop y mobile, con fotos suavemente difuminadas y movimiento continuo.
+El footer está pensado para verse sólido en desktop y mobile, con fotos suavemente difuminadas, logo centrado y movimiento continuo.

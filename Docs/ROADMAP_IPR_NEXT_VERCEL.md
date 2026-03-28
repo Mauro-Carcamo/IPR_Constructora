@@ -17,8 +17,8 @@ Entregables:
   - parallax sutil por scroll (capas/objetos)
   - micro‑interacciones (underline, hover cards)
   - carrusel infinito “proyectos” con crossfade y parallax interno
-- Mapa de secciones (one‑page):
-  - Inicio, Nosotros, Servicios, Clientes, Proyectos, Contacto, Footer
+- Mapa de secciones actual:
+  - Hero, Proyectos, Nosotros, Servicios, Clientes, Contacto, FAQ, Footer
 
 Fuente:
 
@@ -40,10 +40,12 @@ Prioridad alta (replica “sensación”):
 
 - Header sticky + nav
 - Hero (decoraciones con parallax)
-- Servicios (líneas con hover + imágenes flotantes en desktop)
-- Clientes (cards hover con reveal)
-- Proyectos (slider infinito + crossfade + texto + parallax interno)
+- Proyectos (slider infinito + texto + parallax interno)
 - Nosotros (layout tipo founder: texto + imagen + firma animada)
+- Servicios (líneas con reveal por scroll, sin hover de mouse)
+- Clientes (cards con reveal sutil)
+- Contacto (formulario + RRSS)
+- FAQ (preguntas frecuentes + proceso integrado)
 - Footer (CTA centrado + RRSS + carrusel de proyectos)
 
 ## 4) SEO + performance (1–2 días)
@@ -73,6 +75,8 @@ Prioridad alta (replica “sensación”):
   - Smooth scroll (Lenis): `Bosquejo_1/ipr-next/src/components/motion/motion-provider.tsx`
   - Hover “split letters” (GSAP): `Bosquejo_1/ipr-next/src/components/ui/split-text.tsx`
   - Secciones principales: `Bosquejo_1/ipr-next/src/components/sections/`
+- Favicon y apple icon conectados en `Bosquejo_1/ipr-next/src/app/layout.tsx`
+- Mobile refinado con paddings unificados en varias secciones y footer/carousel más compacto.
 - Documentación de secciones/movimientos: `Docs/`
 
 ## Cómo correrlo (local)

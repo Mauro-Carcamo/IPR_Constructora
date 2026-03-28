@@ -1,25 +1,31 @@
 # Docs (Constructora IPR)
 
-Esta carpeta contiene la documentación base para diseñar y construir la **landing page** del proyecto.
+Esta carpeta contiene la documentación base para la landing de **IPR Constructora** en Next.js.
+
+## Estado actual
+
+- Orden actual de la home: `Hero → Proyectos → Nosotros → Servicios → Clientes → Contacto → FAQ → Footer`.
+- Navbar con anchors visibles para `Nosotros`, `Servicios`, `Clientes`, `Contacto` y `FAQ`.
+- Favicon y `apple-icon` ya están conectados en `src/app/layout.tsx`.
 
 ## Guías
 
-- `Docs/LANDING_RH_STYLE.md` — guía de estilo y estructura (look & feel tipo `rh.design` como referencia).
-- `Docs/PARALLAX_RECETAS.md` — recetas de parallax (CSS/JS) + accesibilidad y performance.
-- `Docs/INSPECCION_RH_DESIGN.md` — cómo identificar librerías/patrones de movimiento (sin copiar el sitio).
-- `Docs/COPY_SEO_IPR.md` — copy por secciones + SEO (títulos, H1/H2, meta description).
-- `Docs/LOGO_ANIMACION_PENDIENTE.md` — estado actual de assets del logo + qué falta para animarlo por partes.
-- `Docs/PROYECTOS_SLIDER.md` — slider infinito de proyectos (auto-scroll + drag) y cómo editarlo.
-- `Docs/CLIENTES_SECCION.md` — sección de clientes con cards hover (estilo referencia).
-- `Docs/SERVICIOS_SECCION.md` — sección de servicios estilo “line hover” con imágenes flotantes.
-- `Docs/NOSOTROS_SECCION.md` — sección “Nosotros” tipo founder (texto + imagen + firma).
-- `Docs/FOOTER_CONTACTO.md` — footer limpio (CTA centrado + RRSS + carrusel de proyectos).
-- `Docs/IMAGENES_IPR_PROYECTOS.md` — mapeo de imágenes de `imagenes/` a proyectos del carrusel.
-- `Docs/PROYECTOS_REFERENCIA_IPR.md` — referencia rápida de proyectos y rutas usadas.
-- `Docs/CLI_HERRAMIENTAS.md` — CLIs/herramientas (Next, Vercel, opcional Vue).
-- `Docs/ROADMAP_IPR_NEXT_VERCEL.md` — roadmap ordenado para definir y construir la web con modelo `pagina_modelo.md`.
+- `Docs/COPY_SEO_IPR.md` — copy por secciones + SEO actualizado.
+- `Docs/ROADMAP_IPR_NEXT_VERCEL.md` — roadmap general y estado del sitio.
+- `Docs/PROYECTOS_SLIDER.md` — slider infinito de proyectos.
+- `Docs/SERVICIOS_SECCION.md` — sección de servicios con reveal por scroll.
+- `Docs/CLIENTES_SECCION.md` — sección de clientes con cards hover/reveal.
+- `Docs/NOSOTROS_SECCION.md` — sección “Nosotros” tipo founder.
+- `Docs/FOOTER_CONTACTO.md` — footer con CTA, RRSS y carrusel.
+- `Docs/IMAGENES_IPR_PROYECTOS.md` — mapeo de imágenes por secciones.
+- `Docs/PROYECTOS_REFERENCIA_IPR.md` — referencia rápida de rutas usadas.
+- `Docs/LANDING_RH_STYLE.md` — guía visual general.
+- `Docs/PARALLAX_RECETAS.md` — recetas de parallax.
+- `Docs/INSPECCION_RH_DESIGN.md` — patrones de movimiento de referencia.
+- `Docs/LOGO_ANIMACION_PENDIENTE.md` — estado de assets del logo.
+- `Docs/CLI_HERRAMIENTAS.md` — CLIs/herramientas.
 
 ## Referencias internas del repo
 
-- `pagina_modelo.md` — notas + extractos (captura) del HTML/CSS/JS observados en `rh.design` (Webflow, Lenis, GSAP, etc.).
-- `rrss.md` — copys y texto desde RRSS (útil para secciones/copy).
+- `pagina_modelo.md` — notas + extractos del HTML/CSS/JS de referencia.
+- `rrss.md` — copys y texto desde RRSS.

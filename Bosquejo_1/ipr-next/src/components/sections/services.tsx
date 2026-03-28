@@ -41,15 +41,15 @@ export function Services() {
           </div>
           <div className="services-head">
             <h2 id={sectionId} data-reveal>
-              Servicios de ConstrucciÃ³n en Santiago
+              Servicios de Construcción en Santiago
             </h2>
             <p data-reveal>
               Ejecutamos proyectos para empresas y particulares: oficinas, vivienda, retail y obras
-              civiles. Nos adaptamos al alcance, plazos y estÃƒÂ¡ndar que necesitas.
+              civiles. Nos adaptamos al alcance, plazos y estándar que necesitas.
             </p>
             <p className="muted" data-reveal>
-              Si ya tienes diseÃƒÂ±o, lo construimos; si no, te acompaÃƒÂ±amos con definiciÃƒÂ³n de
-              materiales, terminaciones y coordinaciÃƒÂ³n de especialidades.
+              Si ya tienes diseño, lo construimos; si no, te acompañamos con definición de
+              materiales, terminaciones y coordinación de especialidades.
             </p>
           </div>
         </div>
@@ -57,12 +57,7 @@ export function Services() {
 
       <div className="services-bottom" data-services>
         {services.map((service) => (
-          <button
-            key={service.id}
-            className="service-line"
-            type="button"
-            data-service-line
-          >
+          <button key={service.id} className="service-line" type="button" data-service-line>
             <span className="service-inner container" aria-hidden="true">
               <span className="service-move">
                 <span className="service-row service-row--front">

@@ -1,56 +1,47 @@
-# Copy + SEO — IPR Constructora (landing one‑page)
+# Copy + SEO — IPR Constructora
 
-Este documento consolida el copy optimizado SEO para la landing y deja recomendaciones de estructura HTML.
+Este documento consolida el copy y la estructura SEO de la landing actual.
 
 ## Metadatos (HEAD)
 
 **Title (pestaña / Google)**
 
-Constructora en Santiago | IPR Constructora
+Constructora en Chile | IPR Constructora
 
 **Meta description (Google)**
 
-IPR Constructora, empresa de construcción en Santiago. Especialistas en oficinas, viviendas, retail y obras civiles. Cotiza tu proyecto hoy.
+IPR Constructora, empresa de construcción en Chile. Especialistas en obras civiles, proyectos industriales y desarrollo habitacional.
 
 ## Headings (recomendación)
 
-- Mantener **un solo H1** en toda la página (el del hero).
-- El resto de títulos de sección como **H2** (y subtítulos como H3).
-
-> En tu listado original aparece otro “H1” en PROYECTOS; aquí lo dejo como H2 para mantener buenas prácticas SEO.
+- Mantener **un solo H1** en toda la página: el del hero.
+- El resto de títulos de sección como **H2**.
 
 ## 🏠 INICIO (Hero) — Optimizado SEO
 
 **H1**
 
-Constructora en Santiago | IPR Constructora
+Constructora en Chile
 
 **Texto**
 
-En IPR Constructora somos una empresa de construcción en Santiago especializada en el desarrollo de proyectos de oficinas, viviendas, retail y obras civiles.
+Desarrollamos proyectos de construcción con altos estándares de calidad, seguridad y cumplimiento de plazos. En IPR Constructora ejecutamos soluciones eficientes para empresas y particulares.
 
-Diseñamos y ejecutamos espacios funcionales, modernos y eficientes, acompañando a cada cliente desde la idea inicial hasta la entrega final.
+**CTA**
 
-Trabajamos con materiales de alta calidad y soluciones innovadoras, asegurando resultados duraderos y acordes a cada necesidad.
-
-**CTAs**
-
-- Cotiza tu proyecto de construcción en Santiago
-- Contáctanos hoy
+- Solicitar cotización
 
 ## 👷 NOSOTROS
 
 **H2**
 
-Empresa Constructora en Santiago
+Empresa constructora en Chile
 
 **Texto**
 
-Somos una empresa constructora en Santiago con una visión vanguardista, orientada a desarrollar proyectos modernos, eficientes y sustentables.
+En IPR Constructora ofrecemos servicios de construcción e ingeniería con enfoque en calidad, eficiencia y cumplimiento de plazos.
 
-En IPR Constructora nos adaptamos a los nuevos desafíos de la construcción en Chile, incorporando materiales amigables con el medio ambiente y tecnologías de última generación.
-
-Nuestro enfoque se basa en el trabajo colaborativo, la cercanía con el cliente y el cumplimiento de altos estándares en cada obra.
+Contamos con experiencia en obras civiles, construcción industrial, retail, oficinas y proyectos habitacionales, trabajando con altos estándares de seguridad y normativa vigente en Chile.
 
 ## 🏗️ SERVICIOS — Optimizado SEO
 
@@ -60,18 +51,16 @@ Servicios de Construcción en Santiago
 
 **Texto**
 
-En IPR Constructora ofrecemos servicios de construcción en Santiago adaptados a distintos tipos de proyectos, tanto para empresas como para clientes particulares.
-
-Nos especializamos en entregar soluciones eficientes, combinando diseño, calidad y cumplimiento en cada proyecto de construcción en Chile.
+En IPR Constructora desarrollamos soluciones integrales en construcción e ingeniería, adaptadas a cada tipo de proyecto.
 
 **Servicios (lista)**
 
-- Construcción de oficinas
-- Proyectos residenciales
-- Obras civiles
-- Construcción de cafeterías
-- Clínicas dentales
-- Proyectos de retail
+- Construcción Industrial
+- Retail y Comercio
+- Oficinas
+- Proyectos Habitacionales
+- Obras Civiles
+- Ingeniería
 
 ## CLIENTES — Optimizado SEO
 
@@ -81,40 +70,37 @@ Clientes de IPR Constructora
 
 **Texto**
 
-Trabajamos con empresas y particulares que buscan una constructora en Santiago confiable, con experiencia y enfoque en resultados.
+Trabajamos con empresas y particulares que buscan una constructora en Chile confiable, con experiencia y enfoque en resultados.
 
-Nuestro compromiso es generar relaciones a largo plazo, basadas en la transparencia, el cumplimiento de plazos y la calidad en cada proyecto de construcción.
+Nuestro compromiso es generar relaciones a largo plazo, basadas en la transparencia, el cumplimiento de plazos y la calidad en cada proyecto.
 
 ## PROYECTOS — Optimizado SEO
 
 **H2**
 
-Proyectos de Construcción en Santiago
+Proyectos de Construcción
 
 **Texto**
 
-En IPR Constructora desarrollamos proyectos de construcción en Santiago trabajando de forma cercana con cada cliente.
-
-Nos enfocamos en entender sus necesidades y aportar soluciones innovadoras que mejoren cada espacio, optimizando diseño, funcionalidad y eficiencia.
-
-Revisa nuestros proyectos de oficinas, viviendas, retail y obras civiles ejecutados con altos estándares de calidad.
+En la landing actual, esta sección se presenta como un carrusel visual de proyectos y avances de obra, sin título visible.
 
 ## 📞 CONTACTO
 
 **H2**
 
-Contacto Constructora en Santiago
+Solicita tu cotización
 
 **Texto**
 
-Si buscas una empresa de construcción en Santiago para desarrollar tu proyecto, en IPR Constructora estamos listos para ayudarte.
+¿Buscas una constructora en Chile para tu proyecto?
 
-Contáctanos para recibir asesoría y cotización personalizada según tus necesidades.
+En IPR Constructora te ayudamos a desarrollar obras industriales, comerciales, habitacionales y civiles con soluciones eficientes y profesionales.
 
-**CTAs**
+Completa el formulario y recibe una cotización personalizada.
 
-- Solicita tu cotización de construcción
-- Escríbenos por WhatsApp
+**CTA**
+
+- Enviar solicitud
 
 ## Snippet HTML mínimo (estructura sugerida)
 
@@ -129,11 +115,11 @@ Contáctanos para recibir asesoría y cotización personalizada según tus neces
     <!-- CTAs -->
   </header>
   <main>
-    <section id="nosotros"><h2>Empresa Constructora en Santiago</h2></section>
+    <section id="nosotros"><h2>Empresa constructora en Chile</h2></section>
     <section id="servicios"><h2>Servicios de Construcción en Santiago</h2></section>
     <section id="clientes"><h2>Clientes de IPR Constructora</h2></section>
-    <section id="proyectos"><h2>Proyectos de Construcción en Santiago</h2></section>
-    <section id="contacto"><h2>Contacto Constructora en Santiago</h2></section>
+    <section id="proyectos"><h2>Proyectos de Construcción</h2></section>
+    <section id="contacto"><h2>Solicita tu cotización</h2></section>
   </main>
 </body>
 ```
