@@ -9,7 +9,6 @@ import { Nosotros } from "@/components/sections/nosotros";
 import { Projects } from "@/components/sections/projects";
 import { Services } from "@/components/sections/services";
 import { Testimonials } from "@/components/sections/testimonials";
-import { CursorFollower } from "@/components/ui/cursor-follower";
 import { FloatingSocial } from "@/components/ui/floating-social";
 
 export function Landing() {
@@ -17,7 +16,6 @@ export function Landing() {
     <div className="page">
       <MotionProvider />
       <ScrollAnimations />
-      <CursorFollower />
       <FloatingSocial />
       <Header />
       <main>
@@ -33,3 +31,5 @@ export function Landing() {
     </div>
   );
 }
+
+

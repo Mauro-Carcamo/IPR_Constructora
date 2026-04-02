@@ -20,7 +20,6 @@ export function Projects() {
   );
 
   const renderedSlides = useMemo(() => {
-    // 3x render: original + 2 clones (equivale al slider original).
     const all = [...projects, ...projects, ...projects];
     return all.map((p, idx) => ({ p, key: `${p.id}-${idx}` }));
   }, []);
@@ -37,7 +36,10 @@ export function Projects() {
     let totalWidth = 0;
 
     let isDragging = false;
+    let touchActive = false;
+    let touchAxis: "x" | "y" | null = null;
     let startX = 0;
+    let startY = 0;
     let currentTranslate = 0;
     let prevTranslate = 0;
     let velocity = 0;
@@ -134,30 +136,24 @@ export function Projects() {
       animationID = 0;
     };
 
-    const getPositionX = (e: MouseEvent | TouchEvent) =>
-      "touches" in e ? e.touches[0].clientX : (e as MouseEvent).pageX;
-
-    const dragStart = (e: MouseEvent | TouchEvent) => {
+    const beginDrag = (clientX: number) => {
       isDragging = true;
       shell.classList.add("is-grabbing");
-      startX = getPositionX(e);
-      lastX = startX;
+      startX = clientX;
+      lastX = clientX;
       lastTime = Date.now();
       velocity = 0;
       cancelMomentum();
       cancelAutoScroll();
-      e.preventDefault();
     };
 
-    const drag = (e: MouseEvent | TouchEvent) => {
+    const updateDrag = (clientX: number) => {
       if (!isDragging) return;
-      e.preventDefault();
-      const currentX = getPositionX(e);
       const nowTime = Date.now();
-      const diff = currentX - startX;
+      const diff = clientX - startX;
       const timeDiff = nowTime - lastTime;
-      if (timeDiff > 0) velocity = (currentX - lastX) / timeDiff;
-      lastX = currentX;
+      if (timeDiff > 0) velocity = (clientX - lastX) / timeDiff;
+      lastX = clientX;
       lastTime = nowTime;
       currentTranslate = prevTranslate + diff;
       setSliderPosition();
@@ -218,6 +214,63 @@ export function Projects() {
       updateSlideEffects(performance.now());
     };
 
+    const touchStart = (e: TouchEvent) => {
+      if (e.touches.length !== 1) return;
+      touchActive = true;
+      touchAxis = null;
+      const touch = e.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      lastX = touch.clientX;
+      lastTime = Date.now();
+      velocity = 0;
+      cancelMomentum();
+      cancelAutoScroll();
+    };
+
+    const touchMove = (e: TouchEvent) => {
+      if (!touchActive || e.touches.length !== 1) return;
+      const touch = e.touches[0];
+      const dx = touch.clientX - startX;
+      const dy = touch.clientY - startY;
+
+      if (!touchAxis) {
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        touchAxis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+        if (touchAxis === "y") {
+          touchActive = false;
+          shell.classList.remove("is-grabbing");
+          startAutoScroll();
+          return;
+        }
+        isDragging = true;
+        shell.classList.add("is-grabbing");
+        startX = touch.clientX;
+        lastX = touch.clientX;
+        lastTime = Date.now();
+        prevTranslate = currentTranslate;
+      }
+
+      if (touchAxis === "y") return;
+      e.preventDefault();
+      updateDrag(touch.clientX);
+    };
+
+    const touchEnd = () => {
+      if (!touchActive) return;
+      if (touchAxis === "x" && isDragging) {
+        isDragging = false;
+        shell.classList.remove("is-grabbing");
+        prevTranslate = currentTranslate;
+        applyMomentum();
+      } else {
+        shell.classList.remove("is-grabbing");
+        startAutoScroll();
+      }
+      touchActive = false;
+      touchAxis = null;
+    };
+
     // init
     updateMetrics();
     currentTranslate = -totalWidth;
@@ -227,34 +280,32 @@ export function Projects() {
     startAutoScroll();
 
     // listeners
-    const onMouseDown = (e: MouseEvent) => dragStart(e);
-    const onTouchStart = (e: TouchEvent) => dragStart(e);
-    const onMouseMove = (e: MouseEvent) => drag(e);
-    const onTouchMove = (e: TouchEvent) => drag(e);
+    const onMouseDown = (e: MouseEvent) => {
+      e.preventDefault();
+      beginDrag(e.pageX);
+    };
+    const onMouseMove = (e: MouseEvent) => updateDrag(e.pageX);
+    const onMouseUp = () => dragEnd();
     const onContextMenu = (e: MouseEvent) => e.preventDefault();
 
     shell.addEventListener("mousedown", onMouseDown);
-    shell.addEventListener("touchstart", onTouchStart, { passive: false });
+    shell.addEventListener("touchstart", touchStart, { passive: false });
     window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("touchmove", onTouchMove, { passive: false });
-    window.addEventListener("mouseup", dragEnd);
-    window.addEventListener("touchend", dragEnd);
+    window.addEventListener("touchmove", touchMove, { passive: false });
+    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("touchend", touchEnd);
     shell.addEventListener("contextmenu", onContextMenu);
     window.addEventListener("resize", handleResize);
-    window.addEventListener(
-      "scroll",
-      () => updateSlideEffects(performance.now()),
-      { passive: true }
-    );
+    window.addEventListener("scroll", () => updateSlideEffects(performance.now()), { passive: true });
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("mouseup", dragEnd);
-      window.removeEventListener("touchend", dragEnd);
+      window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("touchend", touchEnd);
       window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchmove", touchMove);
       shell.removeEventListener("mousedown", onMouseDown);
-      shell.removeEventListener("touchstart", onTouchStart);
+      shell.removeEventListener("touchstart", touchStart);
       shell.removeEventListener("contextmenu", onContextMenu);
       cancelMomentum();
       cancelAutoScroll();
