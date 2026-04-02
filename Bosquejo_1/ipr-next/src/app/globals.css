@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -2070,4 +2070,146 @@ p {
 
 
 
+
+
+.section-contact{
+  background: #0d0d0d;
+  color: #f2f2f2;
+}
+.section-contact h2,
+.section-contact p,
+.section-contact .muted,
+.section-contact .btn__text,
+.section-contact .social-btn{
+  color: #f2f2f2;
+}
+.section-contact .contact-copy a,
+.section-contact .contact-copy strong{
+  color: #ffffff;
+}
+.section-contact .btn{
+  background: #ffffff;
+  color: #0d0d0d;
+}
+.section-contact .btn--accent,
+.section-contact .btn--ghost{
+  background: #ffffff;
+  color: #0d0d0d;
+  border: 1px solid rgba(255,255,255,.18);
+}
+.section-contact .btn__text,
+.section-contact .btn__icon,
+.section-contact .contact-social .social-btn{
+  color: #0d0d0d;
+}
+ .section-contact .contact-process{
+  margin-top: 48px;
+  background: #0d0d0d;
+  color: #f2f2f2;
+  border-radius: 24px;
+  padding: 28px;
+}
+ .section-contact .contact-process .process-head{
+  display: grid;
+  gap: 6px;
+  margin-bottom: 18px;
+  max-width: 72ch;
+}
+ .section-contact .contact-process .process-head h2,
+ .section-contact .contact-process .process-head p,
+ .section-contact .contact-process .process-title,
+ .section-contact .contact-process .process-num,
+ .section-contact .contact-process .muted{
+  color: #f2f2f2;
+}
+.section-contact .contact-process .process-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+@media (min-width: 980px){
+  .section-contact .contact-process .process-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+ .section-contact .contact-process .process-card{
+  background: #0d0d0d;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 0px;
+  padding: 22px;
+  min-height: 220px;
+  color: #f2f2f2;
+  box-shadow: none;
+}
+ .section-contact .contact-process .process-num{
+  font-size: 12px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+  margin-bottom: 10px;
+}
+ .section-contact .contact-process .process-title{
+  margin: 0 0 10px;
+  font-size: 22px;
+  letter-spacing: -0.4px;
+  font-weight: 600;
+  color: #f2f2f2;
+}
+
+.section.section-clients{
+  background: #f7f7f7;
+  color: #111111;
+}
+.section.section-clients .muted{
+  color: rgba(17,17,17,.7);
+}
+.section.section-clients .clients-marquees,
+.section.section-clients .marquee,
+.section.section-clients .marquee::before,
+.section.section-clients .marquee::after{
+  background: #f7f7f7;
+}
+.section.section-clients .marquee{
+  border-top: 0;
+  border-bottom: 0;
+  padding: 14px 0;
+}
+.section.section-clients .marquee::before,
+.section.section-clients .marquee::after{
+  display: none;
+}
+.section.section-clients .marquee-list{
+  gap: 10px;
+  padding: 0 10px;
+}
+.section.section-clients .marquee-item{
+  width: clamp(190px, 22vw, 280px);
+  height: 120px;
+}
+.section.section-clients .marquee-card{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+}
+.section.section-clients .marquee-card__image{
+  padding: 0;
+  transform: scale(1.8);
+  transform-origin: center;
+}
+@media (max-width: 759px){
+  .section.section-clients{
+    padding: 48px 0 120px;
+  }
+  .section.section-clients .marquee-item{
+    width: clamp(160px, 52vw, 220px);
+    height: 96px;
+  }
+  .section.section-clients .marquee-card__image{
+    transform: scale(1.8);
+  }
+}
 

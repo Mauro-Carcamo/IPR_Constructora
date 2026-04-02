@@ -1,26 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import { SplitText } from "@/components/ui/split-text";
 
 const WHATSAPP_LINK =
   "https://wa.me/56961245714?text=" +
   encodeURIComponent("Hola, quiero cotizar un proyecto con IPR Constructora.");
 
 const FOOTER_SLIDES = [
-  { src: "/imagenes/Ipr_the_coffee_1.jpeg", alt: "The Coffee - fachada y obra" },
-  { src: "/imagenes/Ipr_the_coffee_2.jpeg", alt: "The Coffee - interior" },
-  { src: "/imagenes/Ipr_the_coffee_3.jpeg", alt: "The Coffee - terminaciones" },
+  { src: "/imagenes/Ipr_norai_2.jpeg", alt: "Norai - detalle interior" },
+  { src: "/imagenes/Ipr_cinepolis_1.jpeg", alt: "Cinépolis - avance de obra" },
   { src: "/imagenes/Ipr_the_coffee_4.jpeg", alt: "The Coffee - detalle de obra" },
-  { src: "/imagenes/Ipr_the_coffee_5.jpeg", alt: "The Coffee - ajuste y avance" },
+  { src: "/imagenes/Ipr_norai_1.jpeg", alt: "Norai - render principal" },
+  { src: "/imagenes/Ipr_cinepolis_3.jpeg", alt: "Cinépolis - ejecución en terreno" },
+  { src: "/imagenes/Ipr_the_coffee_2.jpeg", alt: "The Coffee - interior" },
+  { src: "/imagenes/Ipr_norai_3.jpeg", alt: "Norai - render complementario" },
+  { src: "/imagenes/Ipr_cinepolis_4.jpeg", alt: "Cinépolis - detalle final" },
+  { src: "/imagenes/Ipr_the_coffee_1.jpeg", alt: "The Coffee - fachada y obra" },
+  { src: "/imagenes/Ipr_cinepolis_2.jpeg", alt: "Cinépolis - terminaciones" },
   { src: "/imagenes/Ipr_the_coffee_6.jpeg", alt: "The Coffee - composición general" },
   { src: "/imagenes/Ipr_norai_1.jpeg", alt: "Norai - render principal" },
-  { src: "/imagenes/Ipr_norai_2.jpeg", alt: "Norai - detalle interior" },
-  { src: "/imagenes/Ipr_norai_3.jpeg", alt: "Norai - render complementario" },
-  { src: "/imagenes/Ipr_cinepolis_1.jpeg", alt: "Cinépolis - avance de obra" },
-  { src: "/imagenes/Ipr_cinepolis_2.jpeg", alt: "Cinépolis - terminaciones" },
-  { src: "/imagenes/Ipr_cinepolis_3.jpeg", alt: "Cinépolis - ejecución en terreno" },
-  { src: "/imagenes/Ipr_cinepolis_4.jpeg", alt: "Cinépolis - detalle final" },
+  { src: "/imagenes/Ipr_the_coffee_5.jpeg", alt: "The Coffee - ajuste y avance" },
 ];
 
 export function Footer() {
@@ -34,7 +33,6 @@ export function Footer() {
           <div className="footer-cta">
             <a className="btn btn--accent footer-cta__button" href="#contacto">
               <span className="btn__text">Solicita tu cotización</span>
-              <SplitText text="Solicita tu cotización" />
             </a>
 
             <div className="footer-social footer-social--inline" aria-label="Redes sociales">

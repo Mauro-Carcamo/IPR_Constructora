@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useId, useState } from "react";
 
@@ -18,21 +18,6 @@ const FAQ = [
   {
     q: "¿Cómo cotizo?",
     a: "Contáctanos y cuéntanos tu idea. Te orientamos y armamos una cotización según alcance, plazos y requerimientos.",
-  },
-];
-
-const STEPS = [
-  {
-    t: "Planificación",
-    d: "Definimos alcance, permisos, presupuesto y cronograma. Alineamos expectativas y riesgos desde el día 1.",
-  },
-  {
-    t: "Ejecución",
-    d: "Coordinación de obra, proveedores y calidad. Avances controlados con hitos claros y comunicación continua.",
-  },
-  {
-    t: "Entrega",
-    d: "Revisión final, terminaciones y puesta en marcha. Entrega ordenada y soporte post-obra según el proyecto.",
   },
 ];
 
@@ -78,23 +63,6 @@ export function Testimonials() {
               </button>
             );
           })}
-        </div>
-
-        <div className="process-head" style={{ marginTop: "48px" }}>
-          <h2 data-reveal>De la idea a la entrega</h2>
-          <p className="muted" data-reveal>
-            Etapas claras, control en obra y comunicación constante.
-          </p>
-        </div>
-
-        <div className="process-grid">
-          {STEPS.map((step, idx) => (
-            <article key={step.t} className="process-card" data-reveal>
-              <div className="process-num">{String(idx + 1).padStart(2, "0")}</div>
-              <h3 className="process-title">{step.t}</h3>
-              <p className="muted">{step.d}</p>
-            </article>
-          ))}
         </div>
       </div>
     </section>

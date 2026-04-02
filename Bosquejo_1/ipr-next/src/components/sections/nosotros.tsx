@@ -1,7 +1,6 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
-import { SplitText } from "@/components/ui/split-text";
 
 export function Nosotros() {
   return (
@@ -25,7 +24,6 @@ export function Nosotros() {
 
             <a className="btn btn--ghost" href="#servicios" data-reveal>
               <span className="btn__text">Ver más</span>
-              <SplitText text="Ver más" />
             </a>
           </div>
 
@@ -44,3 +42,4 @@ export function Nosotros() {
     </section>
   );
 }
+

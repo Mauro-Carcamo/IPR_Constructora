@@ -1,7 +1,6 @@
-"use client";
+﻿"use client";
 
 import { useEffect } from "react";
-import { SplitText } from "@/components/ui/split-text";
 
 function useScrollParallax() {
   useEffect(() => {
@@ -55,7 +54,6 @@ export function Hero() {
             <div className="hero-actions" data-reveal>
               <a className="btn btn--accent" href="#contacto" aria-label="Solicitar cotización">
                 <span className="btn__text">Solicitar cotización</span>
-                <SplitText text="Solicitar cotización" />
               </a>
             </div>
           </div>
@@ -69,3 +67,4 @@ export function Hero() {
     </section>
   );
 }
+

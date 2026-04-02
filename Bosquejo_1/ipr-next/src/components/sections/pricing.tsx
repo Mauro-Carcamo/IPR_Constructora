@@ -1,7 +1,6 @@
-"use client";
+﻿"use client";
 
 import { useId } from "react";
-import { SplitText } from "@/components/ui/split-text";
 
 type PricingCard = {
   title: string;
@@ -62,7 +61,6 @@ export function Pricing() {
               </ul>
               <a className="btn btn--accent pricing-cta" href="#contacto" aria-label="Solicitar cotización">
                 <span className="btn__text">Cotizar</span>
-                <SplitText text="Cotizar" />
               </a>
             </div>
           ))}
