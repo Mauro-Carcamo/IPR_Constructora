@@ -1,45 +1,16 @@
-"use client";
+﻿"use client";
 
+import Image from "next/image";
 import { clientTags } from "@/lib/ipr-data";
-import { useEffect, useId, useRef } from "react";
+import { useId } from "react";
+
+const marqueeRows = [clientTags.slice(0, 8), clientTags.slice(8)];
 
 export function Clients() {
   const sectionId = useId();
-  const rootRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-
-    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    const cards = Array.from(root.querySelectorAll<HTMLElement>("[data-client-card]"));
-
-    if (reduceMotion) {
-      cards.forEach((card) => card.classList.add("is-ready"));
-      return;
-    }
-
-    cards.forEach((card) => {
-      card.style.pointerEvents = "none";
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            window.setTimeout(() => {
-              card.style.pointerEvents = "auto";
-              card.classList.add("is-ready");
-            }, 900);
-            obs.unobserve(card);
-          });
-        },
-        { threshold: 0.2 }
-      );
-      obs.observe(card);
-    });
-  }, []);
 
   return (
-    <section ref={rootRef} className="section section-clients" id="clientes" aria-labelledby={sectionId}>
+    <section className="section section-clients" id="clientes" aria-labelledby={sectionId}>
       <div className="container" data-reveal-group>
         <div className="section-label" data-reveal>
           CLIENTES
@@ -56,20 +27,47 @@ export function Clients() {
           </p>
         </div>
 
-        <div className="clients-grid clients-grid--rh" data-clients>
-          {clientTags.map((c) => (
-            <article key={c.id} className="client-card client-card--rh" data-client-card tabIndex={0} data-cursor="see">
-              <div className="client-front" aria-hidden="true">
-                <div className="client-front__inner">
-                  <div className="client-logo">{c.title}</div>
-                </div>
-                <div className="client-tint client-tint--rh" aria-hidden="true" />
+        <div className="clients-marquees" data-clients>
+          {marqueeRows.map((row, rowIndex) => (
+            <div
+              key={`marquee-${rowIndex}`}
+              className={`marquee marquee--${rowIndex % 2 === 0 ? "forward" : "reverse"}`}
+              aria-label={`Marcas de clientes ${rowIndex + 1}`}
+            >
+              <div className="marquee-track">
+                <ul className="marquee-list">
+                  {row.map((client) => (
+                    <li key={client.id} className="marquee-item">
+                      <article className="marquee-card" data-cursor="see">
+                        <Image
+                          src={client.logoSrc}
+                          alt={client.title}
+                          fill
+                          sizes="(min-width: 1080px) 18vw, (min-width: 760px) 35vw, 72vw"
+                          className="marquee-card__image"
+                        />
+                        <span className="sr-only">{client.title}</span>
+                      </article>
+                    </li>
+                  ))}
+                </ul>
+                <ul className="marquee-list" aria-hidden="true">
+                  {row.map((client) => (
+                    <li key={`${client.id}-clone`} className="marquee-item">
+                      <article className="marquee-card" aria-hidden="true">
+                        <Image
+                          src={client.logoSrc}
+                          alt=""
+                          fill
+                          sizes="(min-width: 1080px) 18vw, (min-width: 760px) 35vw, 72vw"
+                          className="marquee-card__image"
+                        />
+                      </article>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="client-hover" aria-label={c.title}>
-                <div className="client-logo client-logo--invert">{c.title}</div>
-                <p className="client-desc">{c.description}</p>
-              </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>

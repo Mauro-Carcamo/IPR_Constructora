@@ -1151,119 +1151,120 @@ p {
   margin-bottom: 24px;
 }
 .section.section-clients{
-  padding: 60px 0 200px;
-  background: transparent;
+  padding: 60px 0 150px;
+  background: #0d0d0d;
+  color: #ffffff;
 }
-.clients-grid {
+.section.section-clients .muted{
+  color: rgba(255,255,255,.78);
+}
+.clients-marquees{
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 12px;
+  gap: 18px;
 }
-.clients-grid--rh{
-  grid-template-columns: repeat(12, 1fr);
-  gap: 24px;
-}
-.client-card {
-  grid-column: span 12;
+.marquee{
   position: relative;
-  border-radius: 0px;
   overflow: hidden;
-  border: 0;
-  background: #ffffff;
-  height: 270px;
-  min-height: 270px;
-  padding: 0;
-  cursor: pointer;
-  transform: translate3d(0, 0, 0);
+  background: #111111;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 20px 0;
 }
-@media (min-width: 760px) {
-  .client-card {
-    grid-column: span 6;
-    min-height: 270px;
-    height: 270px;
-  }
-}
-@media (min-width: 1080px) {
-  .client-card {
-    grid-column: span 3;
-  }
-}
-.client-front,
-.client-hover {
+.marquee::before,
+.marquee::after{
+  content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  width: 8rem;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
-.client-front{
-  display: grid;
-  place-items: center;
-  opacity: 1;
-  transition: opacity 0.18s ease;
+.marquee::before{
+  left: 0;
+  background: linear-gradient(to right, #111111 0%, transparent 100%);
 }
-.client-front__inner{
+.marquee::after{
+  right: 0;
+  background: linear-gradient(to left, #111111 0%, transparent 100%);
+}
+.marquee-track{
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-scroll 42s linear infinite;
+}
+.marquee--reverse .marquee-track{
+  animation-direction: reverse;
+}
+.marquee-list{
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  padding: 0 18px;
+  margin: 0;
+  flex: 0 0 auto;
+}
+.marquee-item{
+  flex: 0 0 auto;
+  width: clamp(190px, 22vw, 280px);
+  height: 120px;
+}
+.marquee-card{
+  position: relative;
   width: 100%;
   height: 100%;
   display: grid;
   place-items: center;
-  padding: 116px 0;
-  position: relative;
-  z-index: 1;
+  background: #ffffff;
+  border-radius: 22px;
+  border: 1px solid rgba(13,13,13,.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+  overflow: hidden;
 }
-.client-tint--rh{
-  position: absolute;
-  inset: 0;
-  background: #f7f7f7;
-  z-index: 0;
+.marquee-card__image{
+  object-fit: contain;
+  object-position: center;
+  padding: 18px;
 }
-.client-hover{
-  opacity: 0;
-  background: #0d0d0d;
-  color: #ffffff;
-  padding: 40px;
-  display: grid;
-  align-content: start;
-  gap: 12px;
-  transition: opacity 0.18s ease;
-}
-.client-logo{
-  width: 100%;
-  max-width: 180px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  letter-spacing: -0.4px;
-  color: #0d0d0d;
-  text-align: center;
-}
-.client-logo--invert{
-  color: #ffffff;
-  justify-items: start;
-  place-items: start;
-  max-width: none;
-  height: auto;
-}
-.client-desc{
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-  color: rgba(255,255,255,.80);
-}
-.client-card.is-ready:hover .client-front {
-  opacity: 0;
-}
-.client-card.is-ready:hover .client-hover {
-  opacity: 1;
-}
-.client-card:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+@media (max-width: 759px) {
+  .section.section-clients{
+    padding: 48px 0 120px;
+  }
+  .clients-marquees{
+    gap: 14px;
+  }
+  .marquee{
+    padding: 16px 0;
+  }
+  .marquee::before,
+  .marquee::after{
+    width: 4rem;
+  }
+  .marquee-list{
+    gap: 12px;
+    padding: 0 12px;
+  }
+  .marquee-item{
+    width: clamp(160px, 52vw, 220px);
+    height: 96px;
+  }
+  .marquee-card__image{
+    padding: 14px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .client-hover {
-    transition: none;
+  .marquee-track {
+    animation: none;
   }
-  .client-front {
-    transition: none;
+}
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -2062,4 +2063,11 @@ p {
   gap: 10px;
   align-items: center;
 }
+
+
+
+
+
+
+
 
