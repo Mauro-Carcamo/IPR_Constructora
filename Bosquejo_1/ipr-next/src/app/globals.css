@@ -1108,7 +1108,7 @@ p {
 }
 .service-row--back {
   background: var(--brand-red);
-  color: #ffffff;
+  color: #0d0d0d;
   transform: translateY(100%);
   align-items: center;
   justify-content: space-between;
@@ -1119,7 +1119,7 @@ p {
   opacity: 1;
 }
 .service-row--back .service-num {
-  color: #ffffff;
+  color: #0d0d0d;
   align-self: auto;
 }
 .service-line.is-active .service-row--front {
@@ -1144,7 +1144,7 @@ p {
   line-height: 1.28;
   letter-spacing: -0.02em;
   font-weight: 500;
-  color: #ffffff;
+  color: #0d0d0d;
   width: 100%;
 }
 .service-line:focus-visible {
