@@ -1035,7 +1035,8 @@ p {
 }
 .section.section-services{
   padding: 150px 0 168px;
-  background: transparent;
+  background: #0d0d0d;
+  color: #ffffff;
 }
 .services-top{ margin-bottom: 28px; }
 .services-bottom{
@@ -1107,8 +1108,8 @@ p {
   transform: translateY(0);
 }
 .service-row--back {
-  background: var(--brand-red);
-  color: #0d0d0d;
+  background: #0d0d0d;
+  color: #ffffff;
   transform: translateY(100%);
   align-items: center;
   justify-content: space-between;
@@ -1119,7 +1120,7 @@ p {
   opacity: 1;
 }
 .service-row--back .service-num {
-  color: #0d0d0d;
+  color: #ffffff;
   align-self: auto;
 }
 .service-line.is-active .service-row--front {
@@ -1144,7 +1145,7 @@ p {
   line-height: 1.28;
   letter-spacing: -0.02em;
   font-weight: 500;
-  color: #0d0d0d;
+  color: #ffffff;
   width: 100%;
 }
 .service-line:focus-visible {
