@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 
@@ -21,10 +21,6 @@ export function Nosotros() {
                 eficiencia, calidad y cumplimiento.
               </p>
             </div>
-
-            <a className="btn btn--ghost" href="#servicios" data-reveal>
-              <span className="btn__text">Ver más</span>
-            </a>
           </div>
 
           <div className="founder-right">

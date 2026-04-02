@@ -316,9 +316,6 @@ export function Projects() {
     <section className="section section-slider" id="proyectos" aria-label="Proyectos">
       <div className="container" data-reveal-group>
         <div className="section-head">
-          <p className="muted" data-reveal>
-            Una muestra de proyectos y avances de obra. Arrastra para explorar.
-          </p>
         </div>
       </div>
 
