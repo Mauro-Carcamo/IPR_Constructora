@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/opengraph-image?v=2",
         width: 1200,
         height: 630,
         alt: "IPR Constructora | Constructora en Santiago",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "IPR Constructora | Constructora en Santiago",
     description,
-    images: ["/twitter-image"],
+    images: ["/twitter-image?v=2"],
   },
   robots: {
     index: true,

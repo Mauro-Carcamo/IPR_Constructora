@@ -6,5 +6,5 @@ export const socialImageSize = { width: 1200, height: 630 } as const;
 export async function loadIprLogoDataUri() {
   const logoPath = join(process.cwd(), "public", "Logo", "Logo_completo.jpeg");
   const logoBuffer = await readFile(logoPath);
-  return `data:image/png;base64,${logoBuffer.toString("base64")}`;
+  return `data:image/jpeg;base64,${logoBuffer.toString("base64")}`;
 }
