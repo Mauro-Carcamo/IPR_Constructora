@@ -14,14 +14,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const description =
+  "IPR Constructora desarrolla obras civiles, industriales, comerciales y habitacionales en Santiago con orden, cumplimiento y calidad.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iprconstructora.vercel.app"),
+  metadataBase: new URL("https://ipr-next.vercel.app"),
   title: {
     default: "IPR Constructora | Constructora en Santiago",
     template: "%s | IPR Constructora",
   },
-  description:
-    "IPR Constructora es una constructora en Santiago especializada en obras civiles, proyectos industriales, retail, oficinas y desarrollo habitacional.",
+  description,
   keywords: [
     "constructora en Santiago",
     "constructora en Chile",
@@ -32,14 +34,25 @@ export const metadata: Metadata = {
     "oficinas",
     "IPR Constructora",
   ],
+  applicationName: "IPR Constructora",
+  authors: [{ name: "IPR Constructora" }],
+  creator: "IPR Constructora",
+  publisher: "IPR Constructora",
   openGraph: {
     title: "IPR Constructora | Constructora en Santiago",
-    description:
-      "Obras civiles, industriales, retail, oficinas y proyectos habitacionales con estándares altos de calidad, seguridad y cumplimiento.",
-    url: "https://iprconstructora.vercel.app",
+    description,
+    url: "https://ipr-next.vercel.app",
     siteName: "IPR Constructora",
     locale: "es_CL",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "IPR Constructora | Constructora en Santiago",
+      },
+    ],
   },
   icons: {
     icon: "/icon.png",
@@ -48,8 +61,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "IPR Constructora | Constructora en Santiago",
-    description:
-      "Obras civiles, industriales, retail, oficinas y proyectos habitacionales con estándares altos de calidad, seguridad y cumplimiento.",
+    description,
+    images: ["/twitter-image"],
   },
   robots: {
     index: true,
